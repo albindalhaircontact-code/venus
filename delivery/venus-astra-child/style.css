@@ -1,0 +1,269 @@
+/*
+Theme Name:   Vénus — Méditerranée scientifique
+Theme URI:    https://laboratoiresvenus.com
+Description:  Thème enfant d'Astra appliquant la nouvelle direction artistique « Méditerranée scientifique » aux Laboratoires Vénus — palette ivoire / bleu Vénus / or doré / terracotta, typographie Cormorant Garamond + Inter, composants éditoriaux. Compatible Elementor.
+Author:       Laboratoires Vénus
+Author URI:   https://laboratoiresvenus.com
+Template:     astra
+Version:      1.0.0
+Text Domain:  venus-mediterranee
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 7.4
+*/
+
+/* ============================================================
+   1. DESIGN TOKENS — palette Vénus « Méditerranée scientifique »
+   ============================================================ */
+:root {
+  --venus-ivory:        #F4EFE6;
+  --venus-ivory-dark:   #EAE2D2;
+  --venus-ink:          #0E0E10;
+  --venus-ink-soft:     #2A2A2E;
+  --venus-navy:         #0F2A44;
+  --venus-navy-soft:    #1F4570;
+  --venus-sky:          #D5E0EB;
+  --venus-gold:         #C9A063;
+  --venus-gold-soft:    #DEC396;
+  --venus-terracotta:   #C57B57;
+  --venus-sage:         #A7B098;
+
+  /* Surcharge des variables Astra principales */
+  --ast-global-color-0:  var(--venus-navy);     /* Couleur primaire */
+  --ast-global-color-1:  var(--venus-terracotta); /* Couleur d'accent */
+  --ast-global-color-2:  var(--venus-ink);
+  --ast-global-color-3:  var(--venus-ink-soft);
+  --ast-global-color-4:  var(--venus-ivory);    /* Background */
+  --ast-global-color-5:  var(--venus-ivory-dark);
+  --ast-global-color-6:  var(--venus-gold);
+  --ast-global-color-7:  var(--venus-sage);
+  --ast-global-color-8:  var(--venus-sky);
+}
+
+/* ============================================================
+   2. TYPOGRAPHIE
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+body,
+.site-content,
+p,
+.entry-content {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif !important;
+  background: var(--venus-ivory);
+  color: var(--venus-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5,
+.entry-title,
+.site-title,
+.widget-title,
+.elementor-heading-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  color: var(--venus-navy);
+}
+
+/* Petite italique élégante pour les sous-titres */
+.site-tagline,
+.entry-meta em,
+.venus-italic {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* ============================================================
+   3. HEADER
+   ============================================================ */
+.ast-primary-header-bar,
+.site-header,
+.ast-above-header-bar {
+  background: var(--venus-ivory) !important;
+  border-bottom: 1px solid rgba(14, 14, 16, 0.08);
+}
+
+.ast-builder-menu-1 .menu-item > a {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px !important;
+  font-weight: 500;
+  color: var(--venus-navy) !important;
+}
+.ast-builder-menu-1 .menu-item > a:hover {
+  color: var(--venus-terracotta) !important;
+}
+
+.site-title a,
+.site-branding .site-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: 28px !important;
+  color: var(--venus-navy) !important;
+}
+
+/* Topbar — message héritage */
+.ast-above-header-bar {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 8px 0;
+  color: rgba(15, 42, 68, 0.75);
+}
+
+/* ============================================================
+   4. BUTTONS
+   ============================================================ */
+.elementor-button,
+.ast-button,
+button[type="submit"],
+.wp-block-button__link,
+.woocommerce a.button,
+.woocommerce button.button {
+  background: var(--venus-navy) !important;
+  color: var(--venus-ivory) !important;
+  border: none !important;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px !important;
+  font-weight: 500;
+  padding: 14px 28px !important;
+  border-radius: 0 !important;
+  transition: background 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.elementor-button:hover,
+.ast-button:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover {
+  background: var(--venus-navy-soft) !important;
+  color: var(--venus-ivory) !important;
+}
+
+.elementor-button.elementor-button-link,
+.elementor-button[class*="ghost"] {
+  background: transparent !important;
+  color: var(--venus-navy) !important;
+  border: 1px solid rgba(15, 42, 68, 0.4) !important;
+}
+.elementor-button.elementor-button-link:hover {
+  background: var(--venus-navy) !important;
+  color: var(--venus-ivory) !important;
+}
+
+/* ============================================================
+   5. WOOCOMMERCE — cartes produit, fiche produit
+   ============================================================ */
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  color: var(--venus-navy) !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.15 !important;
+  text-transform: none !important;
+}
+.woocommerce ul.products li.product:hover .woocommerce-loop-product__title {
+  color: var(--venus-terracotta) !important;
+}
+
+.woocommerce ul.products li.product .price {
+  color: var(--venus-navy) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.woocommerce-product-gallery__image img,
+.woocommerce ul.products li.product img {
+  background: var(--venus-ivory-dark) !important;
+}
+
+.product .product_title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 48px !important;
+  font-weight: 400 !important;
+  line-height: 1.05;
+}
+
+.woocommerce-tabs .panel h2,
+.product_meta {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
+
+/* ============================================================
+   6. FOOTER
+   ============================================================ */
+.site-footer,
+.footer-widget-area {
+  background: var(--venus-navy) !important;
+  color: var(--venus-ivory);
+}
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+.site-footer .widget-title {
+  color: var(--venus-ivory) !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
+.site-footer a {
+  color: rgba(244, 239, 230, 0.85) !important;
+  transition: color 0.3s;
+}
+.site-footer a:hover {
+  color: var(--venus-gold) !important;
+}
+
+/* ============================================================
+   7. UTILITAIRES
+   ============================================================ */
+.venus-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  color: rgba(15, 42, 68, 0.75);
+  font-weight: 500;
+}
+.venus-hairline {
+  display: inline-block;
+  width: 48px;
+  height: 1px;
+  background: var(--venus-gold);
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+/* Display heading helper utilisable dans Elementor */
+.venus-display {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  color: var(--venus-navy);
+}
+.venus-display em,
+.venus-display i {
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* ============================================================
+   8. ACCESSIBILITÉ
+   ============================================================ */
+::selection {
+  background: var(--venus-navy);
+  color: var(--venus-ivory);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--venus-gold);
+  outline-offset: 3px;
+}
