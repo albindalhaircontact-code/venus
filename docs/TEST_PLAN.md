@@ -33,7 +33,7 @@ Ouvrir https://out-nixlefad.devinapps.com/
 
 **Assertions** (chacune doit être visible à l'écran) :
 - Le topbar contient exactement le texte « Une pharmacopée méditerranéenne — Depuis 1981 · Algérie ».
-- Le logo affiche « Laboratoires Vénus » en serif italique sur deux lignes.
+- Le logo affiche « Laboratoires Venus » en serif italique sur deux lignes.
 - Le hero contient le titre « L'éclat des bruns, par les graines de nigelle. » avec « par les graines de nigelle. » en italique.
 - L'eyebrow du hero contient « NOUVELLE CAMPAGNE · HAIR GLOW » en uppercase espacé.
 - Le bouton CTA « DÉCOUVRIR LA GAMME » est présent (variante claire sur fond image).
@@ -62,7 +62,7 @@ Continuer à scroller.
 Scroller jusqu'à la section bleu navy plein.
 
 **Assertions** :
-- Fond `#0F2A44` (bleu Vénus).
+- Fond `#0F2A44` (bleu Venus).
 - Eyebrow doré « NOTRE ENGAGEMENT ».
 - Titre serif ivoire « Trois principes, vérifiables au quotidien. ».
 - 3 piliers numérotés en or : « 01 Recyclable », « 02 Qualité-prix », « 03 Savoir-faire ».
@@ -93,7 +93,7 @@ Cliquer sur le produit « Shampooing Sublimateur — Hair Glow ».
 - Au moins 3 accordéons fermés : « Application », « Résultats », « Ingrédients (INCI) ».
 - Cliquer sur « Ingrédients (INCI) » → liste textuelle commençant par « Aqua » ou contenant « Cocamidopropyl ».
 
-### Étape 7 — Journal Vénus Mag
+### Étape 7 — Journal Venus Mag
 
 Aller à `/journal/`.
 
@@ -109,9 +109,9 @@ Scroller au footer (sur n'importe quelle page).
 
 **Assertions** :
 - Fond bleu navy.
-- 4 colonnes : « Laboratoires Vénus », « Univers », « Maisons », « Maison Vénus ».
+- 4 colonnes : « Laboratoires Venus », « Univers », « Maisons », « Maison Venus ».
 - Liste exhaustive des 7 maisons et 8 univers en liens cliquables.
-- Mention copyright `© 1981 — 2026 Laboratoires Vénus SAPECO`.
+- Mention copyright `© 1981 — 2026 Laboratoires Venus SAPECO`.
 
 ## Critère global de réussite
 

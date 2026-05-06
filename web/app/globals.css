@@ -203,7 +203,7 @@ html, body {
     to { transform: translateX(-50%); }
   }
 
-  /* Vintage stamp — small "Maison Vénus 1981" badge */
+  /* Vintage stamp — small "Maison Venus 1981" badge */
   .vintage-stamp {
     display: inline-flex;
     align-items: center;

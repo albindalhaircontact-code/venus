@@ -4,16 +4,16 @@ Document de référence pour la deuxième passe de refonte. Chaque univers a sa
 propre identité visuelle, fondée sur la psychologie des couleurs, l'ergonomie
 e-commerce, et des références d'autres maisons cosmétiques de référence.
 
-## Logo Vénus original — intégré comme atout patrimonial
+## Logo Venus original — intégré comme atout patrimonial
 
-Le logo « Laboratoires Vénus » de 1981 (rectangle bleu marine, sérif, baseline
+Le logo « Laboratoires Venus » de 1981 (rectangle bleu marine, sérif, baseline
 *La Beauté au Quotidien*) est conservé tel quel et intégré dans :
 
 - **Header** — version horizontale, alignée à gauche, hauteur 56–64 px
 - **Footer** — variante claire sur fond ivoire avec sceau patrimonial
   *« Depuis 1981 · Algérie »*
 - **Pages maisons** — utilisé comme sceau de provenance (« Une maison
-  Laboratoires Vénus »)
+  Laboratoires Venus »)
 - **Sceau vintage** — appliqué en filigrane discret sur la page « Le
   Laboratoire »
 

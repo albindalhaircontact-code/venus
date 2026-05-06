@@ -35,7 +35,7 @@ export function ProductCard({
               isDark ? "text-white/30" : "text-navy/30"
             }`}
           >
-            Vénus
+            Venus
           </div>
         )}
         <span
@@ -45,7 +45,7 @@ export function ProductCard({
               : "text-navy/60 bg-ivory/80"
           }`}
         >
-          {cat?.name ?? "Vénus"}
+          {cat?.name ?? "Venus"}
         </span>
       </div>
       <div className="pt-4">

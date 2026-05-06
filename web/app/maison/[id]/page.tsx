@@ -12,7 +12,7 @@ export function generateMetadata({ params }: { params: { id: string } }) {
   const m = maisonById(params.id);
   if (!m) return {};
   return {
-    title: `${m.name} — Une maison Vénus`,
+    title: `${m.name} — Une maison Venus`,
     description: m.description,
   };
 }
@@ -41,7 +41,7 @@ export default function MaisonPage({ params }: { params: { id: string } }) {
           <div className="max-w-3xl">
             <p className="label-eyebrow !text-ivory/70 mb-4">
               <span className={`hairline inline-block align-middle mr-3 ${accentBg[m.accent]}`} />
-              Une maison Vénus
+              Une maison Venus
             </p>
             <h1 className="font-display text-6xl md:text-7xl lg:text-8xl text-ivory leading-[0.95]">
               {m.shortName}
@@ -68,7 +68,7 @@ export default function MaisonPage({ params }: { params: { id: string } }) {
           <div className="lg:col-span-6 lg:col-start-7">
             <p className="text-ink/75 text-lg leading-[1.7]">{m.description}</p>
             <Link href="/laboratoire" className="btn-link mt-8">
-              Le savoir-faire Vénus
+              Le savoir-faire Venus
             </Link>
           </div>
         </div>

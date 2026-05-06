@@ -1,4 +1,4 @@
-# Plan de refonte — Laboratoires Vénus
+# Plan de refonte — Laboratoires Venus
 
 > **Brief :** refonte complète du design de [laboratoiresvenus.com](https://laboratoiresvenus.com) inspirée des meilleurs sites cosmétiques mondiaux. Site visitable en preview + livrable installable côté organisation.
 
@@ -6,7 +6,7 @@
 
 ## 1. Contexte & analyse de l'existant
 
-**Marque :** Laboratoires Vénus SAPECO — entreprise algérienne, **44 ans d'existence**, ~300 produits cosmétiques, 96 catégories, 8 maisons internes.
+**Marque :** Laboratoires Venus SAPECO — entreprise algérienne, **44 ans d'existence**, ~300 produits cosmétiques, 96 catégories, 8 maisons internes.
 
 **Maisons identifiées :**
 | Maison | Univers | Statut |
@@ -34,7 +34,7 @@
 
 ## 2. Brainstorming — l'équipe virtuelle
 
-J'ai assemblé virtuellement les directions créatives qui ont fait l'autorité de la beauté mondiale et compilé leurs principes pour Vénus :
+J'ai assemblé virtuellement les directions créatives qui ont fait l'autorité de la beauté mondiale et compilé leurs principes pour Venus :
 
 | Référence | Ce qu'on emprunte |
 |---|---|
@@ -66,7 +66,7 @@ J'ai assemblé virtuellement les directions créatives qui ont fait l'autorité 
 | Rôle | Couleur | Hex | Usage |
 |---|---|---|---|
 | **Fond principal** | Ivoire chaud | `#F4EFE6` | Surfaces neutres, atmosphère luxe |
-| **Marque profonde** | Bleu Vénus | `#0F2A44` | Headers, CTA, identité |
+| **Marque profonde** | Bleu Venus | `#0F2A44` | Headers, CTA, identité |
 | **Bleu héritage** | Bleu pastel | `#D5E0EB` | Rappel marque actuelle, surfaces secondaires |
 | **Accent prestige** | Or doré poudré | `#C9A063` | Détails, séparateurs, prestige |
 | **Accent chaleur** | Terracotta | `#C57B57` | Méditerranée, gamme Habba Saouda |
@@ -82,7 +82,7 @@ J'ai assemblé virtuellement les directions créatives qui ont fait l'autorité 
 - **Sage**, *retenu*, méditerranéen
 - Phrases courtes, pas de superlatif marketing
 - Latin botanique pour les ingrédients (*Nigella sativa*, *Hyaluronic acid*)
-- Mention systématique du « Laboratoire Vénus — depuis 1981 »
+- Mention systématique du « Laboratoire Venus — depuis 1981 »
 - Bilingue prêt : FR principal, EN/AR en switch
 
 ---
@@ -112,7 +112,7 @@ Mega-menu visuel avec 1 image par catégorie + lien "voir tout".
 ### Sections de la home (réinventées)
 1. **Hero cinématique** — campagne *Habba Saouda Hair Glow* (image plein écran + claim sobre + 1 CTA)
 2. **Manifeste 44 ans** — texte court + signature graphique
-3. **L'univers Vénus** — mosaïque éditoriale 6 catégories pivot (Visage, Cheveux, Corps, Bébé, Solaire, Parfums)
+3. **L'univers Venus** — mosaïque éditoriale 6 catégories pivot (Visage, Cheveux, Corps, Bébé, Solaire, Parfums)
 4. **Gamme du moment** — focus *Habba Saouda* (3 produits + ingrédient héro + CTA)
 5. **Nos maisons** — slider horizontal des 7 maisons internes
 6. **Rituels & savoir** — 3 articles Venus Mag éditorialisés
@@ -136,7 +136,7 @@ Mega-menu visuel avec 1 image par catégorie + lien "voir tout".
                    [ Bénéfices (3 puces) ]
                    [ Ingrédient héro (carte avec illustration) ]
                    [ Accordéons : Application • Résultats • Ingrédients (INCI) • FAQ ]
-                   [ Texte de marque (Vénus, 44 ans) ]
+                   [ Texte de marque (Venus, 44 ans) ]
 
 [ Section ailleurs ] : "Compléter le rituel" → 3 produits same-line
 [ Section ailleurs ] : Articles Venus Mag liés
@@ -148,7 +148,7 @@ Mega-menu visuel avec 1 image par catégorie + lien "voir tout".
 
 ### Stack du site preview
 - **Next.js 14 (App Router)** + **TypeScript**
-- **Tailwind CSS** (design tokens custom = palette Vénus)
+- **Tailwind CSS** (design tokens custom = palette Venus)
 - **Framer Motion** (animations subtiles)
 - Données = snapshot JSON statique généré depuis l'API publique (importé une fois au build → site full static)
 - Déployé sur **devinapps.com** (frontend hosting) — URL publique partageable

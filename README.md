@@ -1,4 +1,4 @@
-# Laboratoires Vénus — Refonte
+# Laboratoires Venus — Refonte
 
 Refonte complète du site `laboratoiresvenus.com` — direction artistique « Méditerranée scientifique ».
 
@@ -18,7 +18,7 @@ Refonte complète du site `laboratoiresvenus.com` — direction artistique « M�
 
 - **Next.js 14** (App Router, output static)
 - **TypeScript**
-- **Tailwind CSS** avec design tokens custom Vénus
+- **Tailwind CSS** avec design tokens custom Venus
 - **Cormorant Garamond + Inter** (Google Fonts)
 - **Données** : 307 produits, 95 catégories, 18 articles importés depuis l'API WordPress publique
 
@@ -57,4 +57,4 @@ cd ../web && npm run build
 
 Voir `docs/PLAN_REFONTE.md` pour le plan complet et le moodboard.
 
-**Palette** : `#F4EFE6` ivoire · `#0F2A44` bleu Vénus · `#C9A063` or doré · `#C57B57` terracotta · `#A7B098` sauge · `#D5E0EB` bleu pastel
+**Palette** : `#F4EFE6` ivoire · `#0F2A44` bleu Venus · `#C9A063` or doré · `#C57B57` terracotta · `#A7B098` sauge · `#D5E0EB` bleu pastel

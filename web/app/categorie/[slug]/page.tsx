@@ -10,7 +10,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const c = categoryBySlug(params.slug);
   return {
-    title: c ? `${c.name} — Laboratoires Vénus` : "Catégorie",
+    title: c ? `${c.name} — Laboratoires Venus` : "Catégorie",
   };
 }
 

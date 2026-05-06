@@ -59,7 +59,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               ))}
               {p.images.length === 0 && (
                 <div className="aspect-[4/5] bg-ivory-dark grid place-items-center text-navy/30 font-display text-3xl md:col-span-2">
-                  Vénus
+                  Venus
                 </div>
               )}
             </div>

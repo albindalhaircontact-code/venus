@@ -17,7 +17,7 @@ export function generateMetadata({ params }: { params: { id: string } }) {
   if (!u) return {};
   return {
     title: `${u.label} — ${u.tagline}`,
-    description: `Soins ${u.label.toLowerCase()} signés Laboratoires Vénus.`,
+    description: `Soins ${u.label.toLowerCase()} signés Laboratoires Venus.`,
   };
 }
 
@@ -26,12 +26,26 @@ function collectProducts(universId: string): Product[] {
   const seen = new Set<number>();
   const list: Product[] = [];
 
+  // Build matcher for excluded keywords (substring, case-insensitive).
+  const excludes = (u.excludeKeywords ?? []).map((k) => k.toLowerCase());
+  const isExcluded = (p: Product) => {
+    if (!excludes.length) return false;
+    const hay = (p.name + " | " + p.categories.map((c) => c.name).join(" ")).toLowerCase();
+    return excludes.some((kw) => hay.includes(kw));
+  };
+
+  // For "private-collection" we use ONLY the keyword matcher; the category
+  // is empty in the source data so we identify products by their name.
+  const keywordsOnly = universId === "private-collection";
+
   // 1. Resolve by category slug (uses descendants of the category root id).
-  for (const slug of u.rootCategorySlugs) {
-    for (const p of productsByCategorySlug(slug)) {
-      if (!seen.has(p.id) && p.image) {
-        seen.add(p.id);
-        list.push(p);
+  if (!keywordsOnly) {
+    for (const slug of u.rootCategorySlugs) {
+      for (const p of productsByCategorySlug(slug)) {
+        if (!seen.has(p.id) && p.image && !isExcluded(p)) {
+          seen.add(p.id);
+          list.push(p);
+        }
       }
     }
   }
@@ -39,11 +53,16 @@ function collectProducts(universId: string): Product[] {
   // 2. Resolve by category-name fuzzy match (word boundary, name only).
   for (const p of products) {
     if (seen.has(p.id) || !p.image) continue;
+    if (isExcluded(p)) continue;
     const name = p.name.toLowerCase();
     const catNames = p.categories.map((c) => c.name.toLowerCase()).join(" | ");
     const hay = name + " || " + catNames;
     const hit = u.nameKeywords.some((kw) => {
       const k = kw.toLowerCase();
+      // Multi-word keywords (with a space) → simple substring match.
+      if (k.includes(" ")) {
+        return hay.includes(k);
+      }
       // Word-bounded match — avoid "eau" matching inside "peau"
       const escaped = k.replace(/[\\^$*+?.()|[\]{}]/g, "\\$&");
       const re = new RegExp(`(^|[^a-zàâäéèêëïîôöùûüç])${escaped}([^a-zàâäéèêëïîôöùûüç]|$)`, "i");
@@ -163,7 +182,7 @@ export default function UniversPage({ params }: { params: { id: string } }) {
                   className="inline-block w-1.5 h-1.5 rounded-full"
                   style={{ background: theme.palette.accent2 }}
                 />
-                Maison Vénus · 1981
+                Maison Venus · 1981
               </span>
               <span className="text-[11px] tracking-widest uppercase text-white/70">
                 {list.length} références

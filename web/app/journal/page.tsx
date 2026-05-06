@@ -3,8 +3,8 @@ import Link from "next/link";
 import { posts } from "@/lib/data";
 
 export const metadata = {
-  title: "Vénus Mag — Le journal du Laboratoire",
-  description: "Rituels, ingrédients et conseils signés Laboratoires Vénus.",
+  title: "Venus Mag — Le journal du Laboratoire",
+  description: "Rituels, ingrédients et conseils signés Laboratoires Venus.",
 };
 
 export default function JournalPage() {
@@ -17,7 +17,7 @@ export default function JournalPage() {
         <header className="border-b border-ink/15 pb-12 mb-16">
           <p className="label-eyebrow mb-4">
             <span className="hairline inline-block align-middle mr-3" />
-            Vénus Mag
+            Venus Mag
           </p>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-navy leading-[1] max-w-4xl">
             Le journal du<br />

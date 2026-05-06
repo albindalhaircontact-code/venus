@@ -1,6 +1,6 @@
 <?php
 /**
- * Vénus — Méditerranée scientifique : thème enfant d'Astra
+ * Venus — Méditerranée scientifique : thème enfant d'Astra
  *
  * Ce thème enfant applique la nouvelle direction artistique
  * « Méditerranée scientifique » au site laboratoiresvenus.com
@@ -77,7 +77,7 @@ add_action(
 );
 
 /**
- * Forcer la couleur de fond global à l'ivoire Vénus.
+ * Forcer la couleur de fond global à l'ivoire Venus.
  */
 add_action(
 	'wp_head',

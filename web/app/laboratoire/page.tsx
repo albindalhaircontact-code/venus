@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Le Laboratoire — 44 ans d'expertise algérienne",
-  description: "Mot du Président, savoir-faire, recherche et développement aux Laboratoires Vénus.",
+  description: "Mot du Président, savoir-faire, recherche et développement aux Laboratoires Venus.",
 };
 
 export default function LaboratoirePage() {
@@ -21,7 +21,7 @@ export default function LaboratoirePage() {
             <span className="italic font-light">d&apos;une fidélité réciproque.</span>
           </h1>
           <p className="mt-10 text-ink/75 text-xl leading-[1.7] max-w-prose">
-            Le Laboratoire Vénus est né en Algérie en 1981. Depuis, il formule, conditionne
+            Le Laboratoire Venus est né en Algérie en 1981. Depuis, il formule, conditionne
             et expédie ses soins capillaires, dermiques, corporels et de parfumerie depuis
             le même territoire — une exigence de proximité que nous n&apos;avons jamais voulu
             déléguer.
@@ -34,7 +34,7 @@ export default function LaboratoirePage() {
         <div className="relative aspect-[21/9] w-full">
           <Image
             src="https://laboratoiresvenus.com/wp-content/uploads/2021/06/uploded_istock-186932212-1594816069-1.jpg"
-            alt="Laboratoire Vénus"
+            alt="Laboratoire Venus"
             fill
             sizes="100vw"
             className="object-cover"
@@ -61,7 +61,7 @@ export default function LaboratoirePage() {
               Soyez les bienvenus dans notre monde de senteurs et de soins.
             </p>
             <p>
-              Ces quarante dernières années, l&apos;entreprise <em className="not-italic font-medium">Les Laboratoires Vénus</em> est devenue
+              Ces quarante dernières années, l&apos;entreprise <em className="not-italic font-medium">Les Laboratoires Venus</em> est devenue
               au fil du temps votre fidèle alliée dans la préservation de votre capital santé et beauté.
             </p>
             <p>
@@ -70,7 +70,7 @@ export default function LaboratoirePage() {
               notre expertise autour d&apos;une politique d&apos;innovation et de mise à niveau régulière.
             </p>
             <p>
-              La modernisation permanente des Laboratoires Vénus, l&apos;expérience de notre département
+              La modernisation permanente des Laboratoires Venus, l&apos;expérience de notre département
               Recherche &amp; Développement, notre adaptation permanente aux nouveaux besoins, nous
               permettent de mettre à votre disposition chaque année plusieurs gammes de nouveaux
               produits au meilleur prix.
@@ -123,8 +123,8 @@ export default function LaboratoirePage() {
               <p className="label-eyebrow mb-4">Nos maisons</p>
               <h3 className="font-display text-3xl text-navy">Sept signatures, un seul laboratoire.</h3>
               <p className="mt-4 text-ink/70">
-                Habba Saouda, Viderm, Nostalgie, Private Collection, Vénus Men, Buccowhite,
-                Vénus Bébé — toutes nées du même savoir-faire.
+                Habba Saouda, Viderm, Nostalgie, Private Collection, Venus Men, Buccowhite,
+                Venus Bébé — toutes nées du même savoir-faire.
               </p>
               <Link href="/#maisons" className="btn-link mt-6">Découvrir les maisons</Link>
             </div>

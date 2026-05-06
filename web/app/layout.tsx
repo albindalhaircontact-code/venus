@@ -21,8 +21,8 @@ const sans = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Laboratoires Vénus — Une pharmacopée méditerranéenne depuis 1981",
-    template: "%s · Laboratoires Vénus",
+    default: "Laboratoires Venus — Une pharmacopée méditerranéenne depuis 1981",
+    template: "%s · Laboratoires Venus",
   },
   description:
     "44 ans de savoir‑faire algérien. Soins capillaires, dermiques, corporels, parfumerie. Découvrez la nouvelle gamme Habba Saouda — Hair Glow.",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    siteName: "Laboratoires Vénus",
+    siteName: "Laboratoires Venus",
   },
 };
 

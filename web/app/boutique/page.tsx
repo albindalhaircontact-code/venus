@@ -4,8 +4,8 @@ import { univers } from "@/lib/univers";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Boutique — Tous les rituels Vénus",
-  description: "L'intégralité du catalogue Laboratoires Vénus — soin, parfumerie, hygiène quotidienne.",
+  title: "Boutique — Tous les rituels Venus",
+  description: "L'intégralité du catalogue Laboratoires Venus — soin, parfumerie, hygiène quotidienne.",
 };
 
 export default function BoutiquePage() {

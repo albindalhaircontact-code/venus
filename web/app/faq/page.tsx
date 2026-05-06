@@ -2,12 +2,12 @@ export const metadata = { title: "FAQ — Questions fréquentes" };
 
 const items = [
   {
-    q: "Où acheter les produits Laboratoires Vénus ?",
+    q: "Où acheter les produits Laboratoires Venus ?",
     a: "Nos références sont distribuées en pharmacies, parapharmacies et grandes surfaces dans toute l'Algérie, ainsi qu'à l'export — Maroc, Tunisie, Mauritanie, France, Belgique, Allemagne, Émirats, Arabie Saoudite, Côte d'Ivoire, Sénégal. Demandez-nous le point de vente le plus proche depuis la page Contact.",
   },
   {
     q: "Vos produits sont-ils testés sur les animaux ?",
-    a: "Non. Les Laboratoires Vénus respectent l'interdiction des tests sur animaux pour les cosmétiques en vigueur dans l'Union européenne et au-delà. Toutes nos formules sont testées sous contrôle dermatologique sur volontaires.",
+    a: "Non. Les Laboratoires Venus respectent l'interdiction des tests sur animaux pour les cosmétiques en vigueur dans l'Union européenne et au-delà. Toutes nos formules sont testées sous contrôle dermatologique sur volontaires.",
   },
   {
     q: "Vos packagings sont-ils recyclables ?",

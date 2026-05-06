@@ -21,7 +21,7 @@ export default function ContactPage() {
           <div className="mt-10 space-y-6 text-ink/80">
             <div>
               <p className="label-eyebrow mb-2">Adresse</p>
-              <p>Laboratoires Vénus SAPECO<br />Algérie</p>
+              <p>Laboratoires Venus SAPECO<br />Algérie</p>
             </div>
             <div>
               <p className="label-eyebrow mb-2">Service consommateurs</p>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
-import { univers } from "@/lib/univers";
+import { univers, mainMosaicUnivers } from "@/lib/univers";
 import { maisons } from "@/lib/maisons";
 
 export function SiteHeader() {
@@ -40,7 +40,7 @@ export function SiteHeader() {
         </button>
 
         <nav className="hidden lg:flex items-center gap-7 flex-1">
-          {univers.slice(0, 4).map((u) => (
+          {mainMosaicUnivers.slice(0, 4).map((u) => (
             <Link
               key={u.id}
               href={`/univers/${u.id}`}
@@ -54,11 +54,11 @@ export function SiteHeader() {
         <Link
           href="/"
           className="flex items-center justify-center select-none"
-          aria-label="Laboratoires Vénus — depuis 1981"
+          aria-label="Laboratoires Venus — depuis 1981"
         >
           <Image
             src="/brand/venus-master-logo.png"
-            alt="Laboratoires Vénus"
+            alt="Laboratoires Venus"
             width={180}
             height={92}
             priority
@@ -68,7 +68,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7 flex-1 justify-end">
-          {univers.slice(4).map((u) => (
+          {mainMosaicUnivers.slice(4).map((u) => (
             <Link
               key={u.id}
               href={`/univers/${u.id}`}
@@ -82,6 +82,13 @@ export function SiteHeader() {
             className="text-[11px] uppercase tracking-[0.18em] text-navy hover:text-terracotta transition"
           >
             Journal
+          </Link>
+          <Link
+            href="/univers/private-collection"
+            className="text-[10px] uppercase tracking-[0.22em] px-3 py-1.5 border border-[#C9A063] text-[#0F2A44] hover:bg-[#0A0908] hover:text-[#E8C770] hover:border-[#0A0908] transition-all duration-300"
+            style={{ fontWeight: 500 }}
+          >
+            Private Collection
           </Link>
           <button aria-label="Recherche" className="text-navy">
             <Search size={18} />
@@ -99,7 +106,7 @@ export function SiteHeader() {
           <div className="container-prose flex items-center justify-between py-5">
             <Image
               src="/brand/venus-master-logo.png"
-              alt="Laboratoires Vénus"
+              alt="Laboratoires Venus"
               width={150}
               height={76}
               className="h-12 w-auto"

@@ -1,4 +1,4 @@
-# Laboratoires Vénus — Refonte « Méditerranée scientifique »
+# Laboratoires Venus — Refonte « Méditerranée scientifique »
 ## Guide d'installation pour l'organisation
 
 ---
@@ -16,7 +16,7 @@ Ce dossier contient l'intégralité de la refonte du site `laboratoiresvenus.com
 
 ## Option A — Installer le thème enfant Astra (re-skin progressif)
 
-> Cette option **garde tout le contenu actuel** (produits WooCommerce, articles, pages Elementor) et **applique automatiquement** la nouvelle palette, la nouvelle typographie et les composants Vénus à tout le site existant. Idéal pour une transition douce.
+> Cette option **garde tout le contenu actuel** (produits WooCommerce, articles, pages Elementor) et **applique automatiquement** la nouvelle palette, la nouvelle typographie et les composants Venus à tout le site existant. Idéal pour une transition douce.
 
 ### Étape 1 — Téléverser le thème
 
@@ -37,7 +37,7 @@ Le thème enfant a besoin du thème parent **Astra** (déjà installé sur le si
 
 ### Que change le thème enfant Astra ?
 
-- **Palette** : ivoire `#F4EFE6` · bleu Vénus `#0F2A44` · or doré `#C9A063` · terracotta `#C57B57` · sauge `#A7B098`
+- **Palette** : ivoire `#F4EFE6` · bleu Venus `#0F2A44` · or doré `#C9A063` · terracotta `#C57B57` · sauge `#A7B098`
 - **Typographie** : Cormorant Garamond (titres) + Inter (corps)
 - **Header** : topbar « Une pharmacopée méditerranéenne — Depuis 1981 · Algérie », logo en serif élégant
 - **Boutons** : majuscules, lettrage espacé, navy/ivoire
@@ -95,7 +95,7 @@ npm run build       # régénère les 423 pages
 
 - **307 produits** complets (titre, image, catégorie, application, résultats, ingrédients INCI, claims)
 - **95 catégories** hiérarchisées
-- **18 articles** Vénus Mag avec images d'en-tête
+- **18 articles** Venus Mag avec images d'en-tête
 
 ### Pages générées (12 templates, 423 URLs)
 
@@ -103,7 +103,7 @@ npm run build       # régénère les 423 pages
 - `/boutique` — Catalogue complet
 - `/categorie/[slug]` — 71 pages catégories
 - `/produit/[slug]` — 307 pages produit
-- `/maison/[id]` — 7 maisons (Habba Saouda, Viderm, Nostalgie, Private Collection, Vénus Men, Buccowhite, Vénus Bébé)
+- `/maison/[id]` — 7 maisons (Habba Saouda, Viderm, Nostalgie, Private Collection, Venus Men, Buccowhite, Venus Bébé)
 - `/univers/[id]` — 8 univers (Visage, Cheveux, Corps, Solaire, Bébé, Homme, Parfums, Buccodentaire)
 - `/journal` & `/journal/[slug]` — 18 articles
 - `/laboratoire` — Mot du Président, repères 44 ans
@@ -124,4 +124,4 @@ Pour toute question sur le déploiement :
 - Documentation technique : `source/docs/PLAN_REFONTE.md`
 - Site de prévisualisation : https://out-nixlefad.devinapps.com
 
-— Réalisé pour Albin Dalhair / Laboratoires Vénus
+— Réalisé pour Albin Dalhair / Laboratoires Venus

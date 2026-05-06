@@ -19,7 +19,13 @@ export type Univers = {
   /** Loose name keywords used to fuzzily match products to this univers when
    *  category linkage is missing. */
   nameKeywords: string[];
+  /** Keywords to EXCLUDE from this univers (so private-collection products
+   *  don't leak into general parfums, etc.). */
+  excludeKeywords?: string[];
   accent: "navy" | "terracotta" | "sage" | "gold" | "sky" | "ink" | "cyan" | "copper";
+  /** When true, the univers is shown in the main 8-tile mosaic on the home page.
+   *  Special collections (Private Collection) are surfaced separately. */
+  inMainMosaic?: boolean;
 };
 
 export const univers: Univers[] = [
@@ -27,8 +33,9 @@ export const univers: Univers[] = [
     id: "visage",
     label: "Visage",
     tagline: "Soins dermiques, démaquillants, masques",
-    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/cute-girl-with-beautiful-face.jpg",
-    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/Viderm-soin-logo.png",
+    // Editorial portrait, fresh skin — read in journal article "10 conseils corps".
+    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/close-up-of-woman-with-perfect-healthy-fresh-skin-sits-at-the-table-hands-crossed-and-touching-face-1.jpg",
+    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/cute-girl-with-beautiful-face.jpg",
     rootCategorySlugs: [
       "dermique",
       "nettoyant-visage",
@@ -44,13 +51,15 @@ export const univers: Univers[] = [
     ],
     nameKeywords: ["visage", "viderm", "tonique", "sérum", "serum", "crème de jour", "crème de nuit", "patch", "démaquillant"],
     accent: "navy",
+    inMainMosaic: true,
   },
   {
     id: "cheveux",
     label: "Cheveux",
     tagline: "Shampooings, masques, sérums, soins ciblés",
-    hero: "https://laboratoiresvenus.com/wp-content/uploads/2026/04/Banniere_2001x674_Habba-saouda_01.jpg",
-    tile: "https://laboratoiresvenus.com/wp-content/uploads/2026/04/Banniere_2001x674_Habba-saouda_01.jpg",
+    // Editorial hair — clean shot, no baked-in product text.
+    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/rear-view-of-combing-healthy-long-straight-female-hair-isolated-on-gray.jpg",
+    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/rear-view-of-combing-healthy-long-straight-female-hair-isolated-on-gray.jpg",
     rootCategorySlugs: [
       "cheveux",
       "cheveux-secs",
@@ -73,13 +82,15 @@ export const univers: Univers[] = [
     ],
     nameKeywords: ["shampoo", "shampooing", "après-shampoo", "apres-shampoo", "masque cap", "soin cheveux", "habba", "hair glow", "kératine", "keratine", "démêlant"],
     accent: "copper",
+    inMainMosaic: true,
   },
   {
     id: "corps",
     label: "Corps",
     tagline: "Gels douche, déodorants, brumes, soins",
-    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/closeup-of-smiling-woman-making-frame-gesture.jpg",
-    tile: "https://laboratoiresvenus.com/wp-content/uploads/2025/07/Deo_PURE_Clean.png",
+    // Body care editorial — gommage / clean skin texture.
+    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/gommage-corps-maison-1280x720-1.jpg",
+    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/cute-girl-with-beautiful-face-1.jpg",
     rootCategorySlugs: [
       "corps",
       "gel-douche",
@@ -97,13 +108,15 @@ export const univers: Univers[] = [
     ],
     nameKeywords: ["gel douche", "déodorant", "deodorant", "deo", "lait corps", "savon", "main"],
     accent: "terracotta",
+    inMainMosaic: true,
   },
   {
     id: "solaire",
     label: "Solaire",
     tagline: "Protection UV — Viderm Solaire S+",
-    hero: "https://laboratoiresvenus.com/wp-content/uploads/2025/05/sun-protect.jpg",
-    tile: "https://laboratoiresvenus.com/wp-content/uploads/2025/05/sun-protect.jpg",
+    // Editorial — woman applying sun cream on the beach.
+    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/young-beautiful-woman-applying-sun-cream-on-the-beach.jpg",
+    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/young-beautiful-woman-applying-sun-cream-on-the-beach.jpg",
     rootCategorySlugs: [
       "solaire",
       "viderm-solaire",
@@ -113,13 +126,15 @@ export const univers: Univers[] = [
     ],
     nameKeywords: ["solaire", "soleil", "uv", "spf", "bronzage", "ecran total"],
     accent: "cyan",
+    inMainMosaic: true,
   },
   {
     id: "bebe",
     label: "Bébé",
     tagline: "Lingettes, shampooings, lait de toilette",
-    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/Lingettes-Aloe-vera-1.png",
-    tile: "https://laboratoiresvenus.com/wp-content/uploads/2023/11/lingette2.602-02.png",
+    // Editorial baby photograph from journal.
+    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/bb2-02-02-02.png",
+    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/bb2-02-02-02.png",
     rootCategorySlugs: [
       "bebe",
       "lingettes-bebe",
@@ -129,13 +144,15 @@ export const univers: Univers[] = [
     ],
     nameKeywords: ["bébé", "bebe", "baby", "enfant", "nourrisson"],
     accent: "sky",
+    inMainMosaic: true,
   },
   {
     id: "homme",
     label: "Homme",
-    tagline: "Vénus Men — Gel douche, déodorant, sérum",
-    hero: "https://laboratoiresvenus.com/wp-content/uploads/2025/07/DM461-BOOST-DEO-roll-on-3D-products-venus-02.png",
-    tile: "https://laboratoiresvenus.com/wp-content/uploads/2025/07/DM461-BOOST-DEO-roll-on-3D-products-venus-02.png",
+    tagline: "Venus Men — Gel douche, déodorant, sérum",
+    // Editorial — handsome man spraying perfume (from journal "Parfums pour homme").
+    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/portrait-handsome-half-naked-man-spraying-perfume.png",
+    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/portrait-handsome-half-naked-man-spraying-perfume.png",
     rootCategorySlugs: [
       "venus-men",
       "gel-douche-homme",
@@ -143,31 +160,35 @@ export const univers: Univers[] = [
     ],
     nameKeywords: ["men", "for men", "homme", "venus men", "energy"],
     accent: "copper",
+    inMainMosaic: true,
   },
   {
     id: "parfums",
     label: "Parfums",
-    tagline: "Nostalgie & Private Collection",
-    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/Venus-Private-collection-logoswhit.png",
-    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/Venus-Private-collection-logoswhit.png",
+    tagline: "Brumes parfumées, eaux fraîches",
+    // Venus brume parfumée bottle — Mille et Une Nuit (oriental, from the brand).
+    hero: "https://laboratoiresvenus.com/wp-content/uploads/2025/05/Brume_Mille-nuits.png",
+    tile: "https://laboratoiresvenus.com/wp-content/uploads/2025/05/Brume_etoilel.png",
     rootCategorySlugs: [
       "brumes-parfumees",
       "eau-de-toilette",
       "eau-de-cologne",
       "parfums",
-      "private-collection",
       "nostalgie",
       "parfumer-le-corps",
     ],
-    nameKeywords: ["parfum", "eau de parfum", "eau de toilette", "eau de cologne", "fragrance", "nostalgie", "private collection", "brume parfumée"],
+    nameKeywords: ["parfum", "eau de parfum", "eau de toilette", "eau de cologne", "fragrance", "nostalgie", "brume parfumée", "body spray"],
+    excludeKeywords: ["eden stars", "eden lovely", "eden flower", "eden garden"],
     accent: "gold",
+    inMainMosaic: true,
   },
   {
     id: "buccodentaire",
     label: "Buccodentaire",
     tagline: "Buccowhite, Dentomint",
-    hero: "https://laboratoiresvenus.com/wp-content/uploads/2022/02/Logo_Buccowhite.png",
-    tile: "https://laboratoiresvenus.com/wp-content/uploads/2022/02/Logo_Buccowhite.png",
+    // Editorial — closeup of smiling woman from journal "8 astuces beau sourire".
+    hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/closeup-of-smiling-woman-making-frame-gesture.jpg",
+    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/closeup-of-smiling-woman-making-frame-gesture.jpg",
     rootCategorySlugs: [
       "buccodentaire",
       "buccowhite",
@@ -176,6 +197,21 @@ export const univers: Univers[] = [
     ],
     nameKeywords: ["dentifrice", "buccowhite", "dentomint", "dental", "gencive", "haleine", "sourire", "blancheur"],
     accent: "cyan",
+    inMainMosaic: true,
+  },
+  {
+    id: "private-collection",
+    label: "Private Collection",
+    tagline: "L'archive olfactive Venus — Eden",
+    // Luxury / oriental atmosphere — gold + marble (placeholder until user-supplied photos).
+    hero: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=2400&q=80",
+    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/Parf4-01.png",
+    rootCategorySlugs: [
+      "private-collection",
+    ],
+    nameKeywords: ["eden stars", "eden lovely", "eden flower", "eden garden", "private collection"],
+    accent: "gold",
+    inMainMosaic: false,
   },
 ];
 
@@ -190,3 +226,5 @@ export function categoriesForUnivers(u: Univers) {
       u.rootCategorySlugs.some((root) => c.slug.startsWith(root + "-"))
   );
 }
+
+export const mainMosaicUnivers = univers.filter((u) => u.inMainMosaic !== false);

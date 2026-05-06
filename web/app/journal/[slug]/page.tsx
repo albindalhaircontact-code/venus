@@ -27,7 +27,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     <article className="pt-32 pb-32">
       <div className="container-prose max-w-4xl">
         <Link href="/journal" className="label-eyebrow hover:text-terracotta transition">
-          ← Vénus Mag
+          ← Venus Mag
         </Link>
         <header className="mt-8 border-b border-ink/15 pb-10 mb-12">
           <p className="label-eyebrow mb-4">
@@ -47,7 +47,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         </div>
 
         <p className="mt-12 italic font-display text-navy text-xl border-t border-ink/15 pt-10">
-          — Le Laboratoire Vénus
+          — Le Laboratoire Venus
         </p>
       </div>
 

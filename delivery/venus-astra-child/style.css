@@ -1,8 +1,8 @@
 /*
-Theme Name:   Vénus — Méditerranée scientifique
+Theme Name:   Venus — Méditerranée scientifique
 Theme URI:    https://laboratoiresvenus.com
-Description:  Thème enfant d'Astra appliquant la nouvelle direction artistique « Méditerranée scientifique » aux Laboratoires Vénus — palette ivoire / bleu Vénus / or doré / terracotta, typographie Cormorant Garamond + Inter, composants éditoriaux. Compatible Elementor.
-Author:       Laboratoires Vénus
+Description:  Thème enfant d'Astra appliquant la nouvelle direction artistique « Méditerranée scientifique » aux Laboratoires Venus — palette ivoire / bleu Venus / or doré / terracotta, typographie Cormorant Garamond + Inter, composants éditoriaux. Compatible Elementor.
+Author:       Laboratoires Venus
 Author URI:   https://laboratoiresvenus.com
 Template:     astra
 Version:      1.0.0
@@ -13,7 +13,7 @@ Requires PHP: 7.4
 */
 
 /* ============================================================
-   1. DESIGN TOKENS — palette Vénus « Méditerranée scientifique »
+   1. DESIGN TOKENS — palette Venus « Méditerranée scientifique »
    ============================================================ */
 :root {
   --venus-ivory:        #F4EFE6;

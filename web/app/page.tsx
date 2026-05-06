@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { products, posts } from "@/lib/data";
-import { univers } from "@/lib/univers";
+import { mainMosaicUnivers } from "@/lib/univers";
 import { universThemes } from "@/lib/univers-themes";
 import { maisons, maisonProducts } from "@/lib/maisons";
 import { ProductCard } from "@/components/product-card";
@@ -17,51 +17,80 @@ export default function HomePage() {
 
   return (
     <>
-      {/* 1. Hero — Habba Saouda campaign */}
+      {/* 1. Hero — Habba Saouda campaign, with editorial framing */}
       <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-[#1A0F1A]">
         <div className="absolute inset-0">
           <Image
-            src="https://laboratoiresvenus.com/wp-content/uploads/2026/04/Banniere_2001x674_Habba-saouda_01.jpg"
-            alt="Gamme Habba Saouda — Hair Glow"
+            src="https://laboratoiresvenus.com/wp-content/uploads/2021/07/rear-view-of-combing-healthy-long-straight-female-hair-isolated-on-gray.jpg"
+            alt="Gamme Habba Saouda — Hair Glow · L'éclat des bruns"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-right md:object-center"
+            className="object-cover"
             unoptimized
           />
-          {/* Lateral gradient — keeps the left side dark for legibility on every screen */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1A0F1A]/95 via-[#1A0F1A]/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0E0E10]/65" />
+          {/* Deep aubergine wash — the Habba Saouda brand colour bath */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(125deg, #1A0F1A 0%, #1A0F1Aee 25%, #1A0F1Acc 50%, #3F1F2E80 75%, #3F1F2E40 100%)",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0E0E10]/70" />
+          {/* Subtle botanical decoration top-right (heritage) */}
+          <div className="hidden lg:block absolute top-0 right-0 w-[42%] h-full pointer-events-none opacity-[0.12] mix-blend-screen">
+            <Image
+              src="/brand/venus-w40ans-03.png"
+              alt=""
+              fill
+              sizes="40vw"
+              className="object-contain object-right-bottom"
+              unoptimized
+            />
+          </div>
         </div>
 
-        <div className="relative h-full container-prose flex flex-col justify-end pb-20 lg:pb-28">
-          <div className="max-w-2xl text-ivory animate-fade-up">
-            <p className="label-eyebrow !text-ivory/80 mb-6 flex items-center gap-3">
+        <div className="relative h-full container-prose flex flex-col justify-center max-w-7xl">
+          <div className="max-w-2xl lg:max-w-3xl text-ivory animate-fade-up">
+            <p className="label-eyebrow !text-ivory/80 mb-7 flex items-center gap-3">
               <span className="inline-block h-px w-12 bg-gold" />
-              <span className="text-gold-soft">Habba Saouda · Hair Glow</span>
+              <span className="text-gold-soft">Nouveau · Habba Saouda — Hair Glow</span>
             </p>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-ivory text-balance">
-              L&apos;éclat des bruns,<br />
-              <span className="italic font-light">par les graines de nigelle.</span>
+            <h1
+              className="font-display text-ivory text-balance leading-[0.95]"
+              style={{ fontSize: "clamp(3rem, 7.5vw, 6.5rem)" }}
+            >
+              Vos bruns ternes
+              <br />
+              <span className="italic font-light">retrouvent leur âme</span>
+              <br />
+              <span className="italic font-light">et leur lumière.</span>
             </h1>
-            <p className="mt-6 max-w-prose text-ivory/85 text-base md:text-lg leading-relaxed">
-              La gamme <em className="not-italic font-medium">Habba Saouda — Hair Glow</em> unit
-              l&apos;extrait pur de <em>Nigella sativa</em>, régénérateur ancestral, à un acide
-              hyaluronique capillaire qui hydrate en profondeur sans alourdir.
+            <p className="mt-7 max-w-[36rem] text-ivory/85 text-base md:text-lg leading-relaxed font-sans">
+              La gamme Habba Saouda — Hair Glow unit l&apos;extrait pur de graines de nigelle,
+              régénérateur ancestral, à un acide hyaluronique capillaire qui hydrate en
+              profondeur sans jamais alourdir.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/maison/habba-saouda" className="btn-primary !bg-gold !text-[#1A0F1A] hover:!bg-ivory">
+            <div className="mt-10 flex flex-wrap gap-4 items-center">
+              <Link
+                href="/maison/habba-saouda"
+                className="btn-primary !bg-gold !text-[#1A0F1A] hover:!bg-ivory"
+              >
                 Découvrir la gamme <ArrowRight size={14} />
               </Link>
               <Link href="/boutique" className="btn-link !text-ivory !border-ivory/40">
                 Toute la boutique
               </Link>
             </div>
-            <div className="mt-10">
-              <span className="vintage-stamp text-ivory/70 border-ivory/30">
-                Maison Vénus · 1981
-              </span>
-            </div>
+          </div>
+          <div className="mt-12 flex items-center gap-5 opacity-90">
+            <span className="vintage-stamp text-ivory/70 border-ivory/30">
+              Laboratoires Venus · Algérie · 1981
+            </span>
+            <span className="text-[10px] tracking-widest uppercase text-gold-soft">
+              79 récompenses · 44 ans
+            </span>
           </div>
         </div>
       </section>
@@ -81,7 +110,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={150} className="lg:col-span-6 lg:col-start-7">
             <p className="text-ink/75 text-lg leading-[1.7] font-sans">
-              Né en Algérie, le Laboratoire Vénus formule depuis quatre décennies les rituels du
+              Né en Algérie, le Laboratoire Venus formule depuis quatre décennies les rituels du
               quotidien — soin du cheveu, soin de la peau, parfumerie, hygiène familiale.
             </p>
             <p className="text-ink/75 text-lg leading-[1.7] mt-5 font-sans">
@@ -102,7 +131,7 @@ export default function HomePage() {
       <section className="py-24 lg:py-32 bg-ivory-dark/40">
         <div className="container-prose">
           <SectionHeading
-            eyebrow="L'univers Vénus"
+            eyebrow="L'univers Venus"
             title={
               <>
                 Huit territoires de soin,<br />
@@ -111,7 +140,7 @@ export default function HomePage() {
             }
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-14">
-            {univers.map((u, i) => {
+            {mainMosaicUnivers.map((u, i) => {
               const theme = universThemes[u.id];
               const isDarkTile = !!theme?.darkHero;
               const surface = theme?.palette.surface ?? "#EAE2D2";
@@ -213,7 +242,7 @@ export default function HomePage() {
                 <span className="italic font-light">un seul laboratoire.</span>
               </>
             }
-            intro="Chaque maison Vénus exprime une promesse — dermique, capillaire, parfumée, masculine, infantile. Toutes naissent du même savoir-faire, depuis 1981."
+            intro="Chaque maison Venus exprime une promesse — dermique, capillaire, parfumée, masculine, infantile. Toutes naissent du même savoir-faire, depuis 1981."
           />
         </div>
         <div className="mt-14 overflow-x-auto scrollbar-hide">
@@ -241,6 +270,77 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5b. Private Collection — collection à part, dorée et précieuse */}
+      <section className="relative py-32 lg:py-40 overflow-hidden bg-[#0A0908] text-[#F5E9D0]">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=2400&q=80"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-50"
+            unoptimized
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0908] via-[#0A0908]/80 to-[#0A0908]/30" />
+        </div>
+        <div className="relative container-prose">
+          <div className="max-w-2xl">
+            <p
+              className="label-eyebrow mb-6 flex items-center gap-3"
+              style={{ color: "#D4A24E" }}
+            >
+              <span className="inline-block h-px w-12" style={{ background: "#D4A24E" }} />
+              Une collection à part
+            </p>
+            <h2
+              className="font-display text-balance"
+              style={{
+                color: "#F5E9D0",
+                fontSize: "clamp(2.75rem, 5.5vw, 4.75rem)",
+                lineHeight: 1.02,
+              }}
+            >
+              Private Collection.
+              <br />
+              <span className="italic font-light" style={{ color: "#E8C770" }}>
+                L&apos;archive olfactive Venus.
+              </span>
+            </h2>
+            <p
+              className="mt-7 text-base md:text-lg leading-relaxed font-sans"
+              style={{ color: "rgba(245,233,208,0.82)" }}
+            >
+              Eden Stars, Eden Lovely, Eden Flower — la haute parfumerie Venus. Eaux de parfum,
+              déodorants, gels douche ; un rituel précieux, pensé comme une signature personnelle.
+              Une maison à part, distincte de la parfumerie classique.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/univers/private-collection"
+                className="btn-primary"
+                style={{
+                  background: "#D4A24E",
+                  color: "#0A0908",
+                  borderColor: "#D4A24E",
+                }}
+              >
+                Entrer dans la collection <ArrowRight size={14} />
+              </Link>
+              <Link
+                href="/maison/private-collection"
+                className="btn-link"
+                style={{
+                  color: "#E8C770",
+                  borderColor: "rgba(232,199,112,0.4)",
+                }}
+              >
+                La maison
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -314,11 +414,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. Vénus Mag — journal */}
+      {/* 8. Venus Mag — journal */}
       <section className="py-32 bg-ivory-dark/40">
         <div className="container-prose">
           <SectionHeading
-            eyebrow="Vénus Mag"
+            eyebrow="Venus Mag"
             title={
               <>
                 Conseils,<br />
@@ -384,7 +484,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
             {[
               {
-                t: "Personnellement j'adore les produits Vénus. Je tiens à vous remercier pour la qualité ainsi que les prix des produits.",
+                t: "Personnellement j'adore les produits Venus. Je tiens à vous remercier pour la qualité ainsi que les prix des produits.",
                 a: "Samah B.",
               },
               {
@@ -414,7 +514,7 @@ export default function HomePage() {
               Restez connecté
             </p>
             <h2 className="font-display text-4xl lg:text-5xl text-navy">
-              La lettre Vénus,<br />
+              La lettre Venus,<br />
               <span className="italic font-light">une fois par saison.</span>
             </h2>
             <p className="mt-5 text-ink/70 max-w-prose">
