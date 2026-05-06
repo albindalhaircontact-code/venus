@@ -7,6 +7,8 @@ export type Maison = {
   tagline: string;
   description: string;
   hero: string;
+  /** Optional brand logo (PNG with transparency). Overlaid on the maison card. */
+  logo?: string;
   signature: string;
   accent: "terracotta" | "navy" | "gold" | "sage" | "sky" | "ink";
   matchName?: string[];
@@ -42,6 +44,7 @@ export const maisons: Maison[] = [
       "Formulée par notre département de recherche, la gamme Viderm répond à chaque préoccupation cutanée : Purifiant P+, Soin S+, Régulateur R+, Anti-âge A+, Solaire S+. Une pharmacopée moderne, testée sous contrôle dermatologique.",
     // Editorial — fresh-skin portrait, dermatological territory.
     hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/close-up-of-woman-with-perfect-healthy-fresh-skin-sits-at-the-table-hands-crossed-and-touching-face-1.jpg",
+    logo: "/brand/viderm-reg.png",
     signature: "Niacinamide · Vitamine B · Patch H₂O",
     accent: "navy",
     matchName: ["viderm"],
@@ -59,6 +62,8 @@ export const maisons: Maison[] = [
     accent: "gold",
     matchName: ["nostalgie"],
   },
+  // Note: Habba Saouda + Viderm + Nostalgie + Private Collection + Venus Men + Buccodentaire + Venus Bébé
+  // are the 7 "maisons" (curated). The 14 sub-marques sit in /lib/brands.ts.
   {
     id: "private-collection",
     name: "Private Collection",
@@ -67,8 +72,9 @@ export const maisons: Maison[] = [
     description:
       "Notre laboratoire signe ses créations les plus précieuses — extraits concentrés, matières premières rares, flacons dessinés à la main.",
     // Luxe editorial — gold/marble atmosphere (placeholder until user-supplied photo).
-    hero: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=2400&q=80",
-    signature: "Extraits de parfum · Eden Stars · Eden Lovely · Eden Flower",
+    hero: "/brand/private-collection/anti-age-clean.webp",
+    logo: "/brand/private-collection-gold.png",
+    signature: "Anti-âge · Acide hyaluronique · Eden",
     accent: "ink",
     matchName: ["private", "eden stars", "eden lovely", "eden flower", "eden garden"],
   },
@@ -81,6 +87,7 @@ export const maisons: Maison[] = [
       "Soins capillaires, gels douche, déodorants, body sprays et eaux de toilette. Pensés pour la peau et les cheveux d'homme — efficacité directe, sillages affirmés.",
     // Editorial — handsome man spraying perfume.
     hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/portrait-handsome-half-naked-man-spraying-perfume.png",
+    logo: "/brand/logos/LOGO-MEN-AR-FR8-e1745415723444.png",
     signature: "Gels douche · Déodorants · Body sprays",
     accent: "navy",
     matchCategorySlug: ["venus-men"],
@@ -94,6 +101,7 @@ export const maisons: Maison[] = [
       "Buccowhite et Dentomint, deux signatures dédiées à l'éclat de l'émail et à la fraîcheur de l'haleine. Formules douces, technologies blanchissantes, rituels matin & soir.",
     // Editorial — closeup smile, frame gesture.
     hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/closeup-of-smiling-woman-making-frame-gesture.jpg",
+    logo: "/brand/logos/Logo_Buccowhite-1024x688.png",
     signature: "Soins buccodentaires",
     accent: "sky",
     matchCategorySlug: ["buccodentaire"],
@@ -107,6 +115,7 @@ export const maisons: Maison[] = [
       "Lingettes, eau de cologne, eau de toilette, lait, shampooings — formules sans paraben, testées dermatologiquement, conçues pour la peau et les cheveux des tout-petits.",
     // Editorial — baby photograph from journal.
     hero: "https://laboratoiresvenus.com/wp-content/uploads/2021/07/bb2-02-02-02.png",
+    logo: "/brand/logos/LOGO-VV.png",
     signature: "Soins nourrisson",
     accent: "sage",
     matchCategorySlug: ["bebe"],

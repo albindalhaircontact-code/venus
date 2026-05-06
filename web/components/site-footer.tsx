@@ -71,6 +71,30 @@ export function SiteFooter() {
               <li><Link href="/faq" className="hover:text-gold transition">FAQ</Link></li>
               <li><Link href="/exports" className="hover:text-gold transition">Présence internationale</Link></li>
             </ul>
+
+            <p className="label-eyebrow !text-ivory/50 mb-3 mt-8">Nos coordonnées</p>
+            <ul className="space-y-1 text-ivory/70 text-sm leading-snug">
+              <li>202, Rue du 17 Septembre 1956</li>
+              <li>09100 Oued Yaïch · Blida · Algérie</li>
+              <li className="pt-2">
+                <a href="tel:+213252753 54" className="hover:text-gold">+213 (0) 25 27 53 54</a>
+              </li>
+              <li>
+                <a href="tel:0770400040" className="hover:text-gold">0770 40 00 40</a>{" "}
+                <span className="text-ivory/40">· Service consommateurs</span>
+              </li>
+              <li>
+                <a href="mailto:contact@labovenus.dz" className="hover:text-gold">contact@labovenus.dz</a>
+              </li>
+            </ul>
+
+            <div className="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-[11px] uppercase tracking-widest text-ivory/50">
+              <a className="hover:text-gold" href="https://www.facebook.com/laboratoiresvenus/" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a className="hover:text-gold" href="https://www.instagram.com/laboratoires_venus_sapeco/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a className="hover:text-gold" href="https://www.linkedin.com/company/laboratoires-venus-sapeco" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a className="hover:text-gold" href="https://www.youtube.com/channel/UCcIIPIHz8Zp197_XyEQStdg" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <a className="hover:text-gold" href="https://www.tiktok.com/@laboratoiresvenussapeco" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
           </div>
         </div>
 

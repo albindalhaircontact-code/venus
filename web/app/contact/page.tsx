@@ -21,15 +21,45 @@ export default function ContactPage() {
           <div className="mt-10 space-y-6 text-ink/80">
             <div>
               <p className="label-eyebrow mb-2">Adresse</p>
-              <p>Laboratoires Venus SAPECO<br />Algérie</p>
+              <p>
+                Laboratoires Venus SAPECO<br />
+                202, Rue du 17 Septembre 1956<br />
+                09100 Oued Yaïch · Blida<br />
+                Algérie
+              </p>
+            </div>
+            <div>
+              <p className="label-eyebrow mb-2">Téléphone</p>
+              <p>
+                <a href="tel:+213252753 54" className="hover:text-navy">+213 (0) 25 27 53 54</a>{" "}
+                / <a href="tel:+213252754 54" className="hover:text-navy">+213 (0) 25 27 54 54</a>
+              </p>
             </div>
             <div>
               <p className="label-eyebrow mb-2">Service consommateurs</p>
-              <p>contact@laboratoiresvenus.com</p>
+              <p>
+                <a href="tel:0770400040" className="hover:text-navy">0770 40 00 40</a>
+              </p>
+            </div>
+            <div>
+              <p className="label-eyebrow mb-2">Email</p>
+              <p>
+                <a href="mailto:contact@labovenus.dz" className="hover:text-navy">contact@labovenus.dz</a>
+              </p>
             </div>
             <div>
               <p className="label-eyebrow mb-2">Horaires</p>
               <p>Du dimanche au jeudi · 9h — 17h</p>
+            </div>
+            <div>
+              <p className="label-eyebrow mb-2">Suivez-nous</p>
+              <ul className="space-y-1">
+                <li><a className="hover:text-navy" href="https://www.facebook.com/laboratoiresvenus/" target="_blank" rel="noopener noreferrer">Facebook · @laboratoiresvenus</a></li>
+                <li><a className="hover:text-navy" href="https://www.instagram.com/laboratoires_venus_sapeco/" target="_blank" rel="noopener noreferrer">Instagram · @laboratoires_venus_sapeco</a></li>
+                <li><a className="hover:text-navy" href="https://www.linkedin.com/company/laboratoires-venus-sapeco" target="_blank" rel="noopener noreferrer">LinkedIn · Laboratoires Venus SAPECO</a></li>
+                <li><a className="hover:text-navy" href="https://www.youtube.com/channel/UCcIIPIHz8Zp197_XyEQStdg" target="_blank" rel="noopener noreferrer">YouTube · Laboratoires Venus</a></li>
+                <li><a className="hover:text-navy" href="https://www.tiktok.com/@laboratoiresvenussapeco" target="_blank" rel="noopener noreferrer">TikTok · @laboratoiresvenussapeco</a></li>
+              </ul>
             </div>
           </div>
         </div>

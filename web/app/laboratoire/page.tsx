@@ -57,8 +57,8 @@ export default function LaboratoirePage() {
           </div>
           <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-ink/80 text-lg leading-[1.8]">
             <p>
-              Je suis particulièrement heureux de vous accueillir sur notre site web.
-              Soyez les bienvenus dans notre monde de senteurs et de soins.
+              Je suis particulièrement heureux de vous accueillir sur notre site web qui vous est
+              spécialement dédié. Soyez les bienvenus dans notre monde de senteurs et de soins.
             </p>
             <p>
               Ces quarante dernières années, l&apos;entreprise <em className="not-italic font-medium">Les Laboratoires Venus</em> est devenue
@@ -76,12 +76,23 @@ export default function LaboratoirePage() {
               produits au meilleur prix.
             </p>
             <p>
-              La sélection par vos soins de nos produits nous a permis d&apos;obtenir le label
+              La performance des Laboratoires Venus se mesure aussi par la solidité des liens
+              avec nos consommatrices et nos consommateurs. La sélection par vos soins de nos
+              produits nous a permis d&apos;obtenir le label
               <em className="italic"> « Élu produit de l&apos;année »</em> pour trois de nos innovations.
-              C&apos;est la fierté d&apos;un challenge réussi.
+              C&apos;est la fierté d&apos;un challenge réussi. Votre confiance et votre fidélité
+              renforcent notre conviction à persister sur la voie de l&apos;excellence pour vous
+              accompagner au quotidien.
+            </p>
+            <p>
+              En vous assurant de notre ambition de toujours prendre soin de vous mais aussi de
+              notre environnement naturel, je vous laisse découvrir nos dernières nouveautés.
             </p>
             <p className="pt-4 italic font-display text-navy text-xl">
-              — Le Président Directeur Général
+              — M. Mourad MOULA<br />
+              <span className="text-base not-italic font-sans tracking-wider uppercase text-ink/60">
+                Président Directeur Général
+              </span>
             </p>
           </div>
         </div>

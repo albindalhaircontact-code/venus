@@ -5,6 +5,7 @@ import { products, posts } from "@/lib/data";
 import { mainMosaicUnivers } from "@/lib/univers";
 import { universThemes } from "@/lib/univers-themes";
 import { maisons, maisonProducts } from "@/lib/maisons";
+import { brands } from "@/lib/brands";
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -261,7 +262,21 @@ export default function HomePage() {
                     sizes="(min-width: 1024px) 28vw, 78vw"
                     className="object-cover transition-transform duration-1000 ease-venus group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink/55" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink/65" />
+                  {m.logo && (
+                    <div className="absolute inset-x-0 bottom-0 p-6 flex items-end justify-start">
+                      <div className="bg-ivory/95 backdrop-blur-sm px-4 py-3 inline-flex items-center justify-center max-w-[60%]">
+                        <Image
+                          src={m.logo}
+                          alt={`Logo ${m.shortName}`}
+                          width={140}
+                          height={70}
+                          className="max-h-[44px] w-auto object-contain"
+                          unoptimized
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="pt-5">
                   <p className="label-eyebrow mb-1">{m.signature}</p>
@@ -275,50 +290,71 @@ export default function HomePage() {
       </section>
 
       {/* 5b. Private Collection — collection à part, dorée et précieuse */}
-      <section className="relative py-32 lg:py-40 overflow-hidden bg-[#0A0908] text-[#F5E9D0]">
-        <div className="absolute inset-0">
+      <section className="relative py-28 lg:py-36 overflow-hidden bg-[#0A0908] text-[#F5E9D0]">
+        <div className="absolute inset-0 opacity-25">
           <Image
             src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=2400&q=80"
             alt=""
             fill
             sizes="100vw"
-            className="object-cover opacity-50"
+            className="object-cover"
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0908] via-[#0A0908]/80 to-[#0A0908]/30" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse at 75% 50%, rgba(212,162,78,0.18) 0%, rgba(10,9,8,0.92) 60%)",
+            }}
+          />
         </div>
-        <div className="relative container-prose">
-          <div className="max-w-2xl">
+        <div className="relative container-prose grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-6 order-2 lg:order-1">
+            <Image
+              src="/brand/private-collection-gold.png"
+              alt="Logo Venus Private Collection"
+              width={220}
+              height={150}
+              className="mb-8 brightness-0 invert opacity-90"
+              style={{ filter: "sepia(1) hue-rotate(5deg) saturate(2.2)" }}
+              unoptimized
+            />
             <p
-              className="label-eyebrow mb-6 flex items-center gap-3"
+              className="label-eyebrow mb-4 flex items-center gap-3"
               style={{ color: "#D4A24E" }}
             >
-              <span className="inline-block h-px w-12" style={{ background: "#D4A24E" }} />
+              <span className="inline-block h-px w-10" style={{ background: "#D4A24E" }} />
               Une collection à part
             </p>
             <h2
               className="font-display text-balance"
               style={{
                 color: "#F5E9D0",
-                fontSize: "clamp(2.75rem, 5.5vw, 4.75rem)",
-                lineHeight: 1.02,
+                fontSize: "clamp(2.5rem, 5vw, 4.25rem)",
+                lineHeight: 1.04,
               }}
             >
-              Private Collection.
+              Anti-âge,
               <br />
               <span className="italic font-light" style={{ color: "#E8C770" }}>
-                L&apos;archive olfactive Venus.
+                à l&apos;acide hyaluronique.
               </span>
             </h2>
             <p
-              className="mt-7 text-base md:text-lg leading-relaxed font-sans"
+              className="mt-6 text-base md:text-lg leading-relaxed font-sans max-w-xl"
               style={{ color: "rgba(245,233,208,0.82)" }}
             >
-              Eden Stars, Eden Lovely, Eden Flower — la haute parfumerie Venus. Eaux de parfum,
-              déodorants, gels douche ; un rituel précieux, pensé comme une signature personnelle.
-              Une maison à part, distincte de la parfumerie classique.
+              Lotion Tonique, Lait Démaquillant, Sérum Hydratant, Crème Hydratante.
+              La signature anti-âge Private Collection — précision dermatologique,
+              écrin doré, rituel d&apos;exception.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <p
+              className="mt-3 text-sm leading-relaxed font-sans italic max-w-xl"
+              style={{ color: "rgba(232,199,112,0.85)" }}
+            >
+              « Luxury that defies the years. »
+            </p>
+            <div className="mt-9 flex flex-wrap gap-4">
               <Link
                 href="/univers/private-collection"
                 className="btn-primary"
@@ -341,6 +377,65 @@ export default function HomePage() {
                 La maison
               </Link>
             </div>
+          </div>
+          <div className="lg:col-span-6 order-1 lg:order-2">
+            <div className="relative aspect-[4/5] lg:aspect-[5/6] overflow-hidden">
+              <Image
+                src="/brand/private-collection/anti-age-luxury.webp"
+                alt="Private Collection — Anti-âge à l'acide hyaluronique"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5c. Découvrez nos marques — 14 signatures officielles */}
+      <section className="py-28 bg-ivory-dark/30 border-y border-ink/8">
+        <div className="container-prose">
+          <div className="max-w-2xl">
+            <p className="label-eyebrow mb-5">
+              <span className="hairline inline-block align-middle mr-3" />
+              Découvrez nos marques
+            </p>
+            <h2 className="font-display text-4xl lg:text-5xl text-navy">
+              Quatorze signatures,
+              <br />
+              <span className="italic font-light">un héritage commun.</span>
+            </h2>
+            <p className="mt-5 text-ink/70 text-base leading-relaxed font-sans max-w-xl">
+              Du soin dermatologique Viderm aux parfumeries d&apos;exception
+              Private Collection — chaque marque Venus exprime un savoir-faire
+              spécifique du Laboratoire.
+            </p>
+          </div>
+          <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-4">
+            {brands.map((b) => (
+              <Link
+                key={b.id}
+                href={b.href}
+                title={b.name}
+                className="group bg-ivory border border-ink/8 hover:border-navy/30 hover:shadow-md transition-all duration-500 aspect-square flex items-center justify-center p-6 relative overflow-hidden"
+              >
+                <Image
+                  src={b.logo}
+                  alt={b.name}
+                  width={140}
+                  height={140}
+                  className="max-w-full max-h-full object-contain transition-transform duration-700 ease-venus group-hover:scale-105"
+                  unoptimized
+                />
+                <span className="absolute inset-0 bg-navy/95 text-ivory opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-3 text-center">
+                  <span className="font-display text-base">{b.name}</span>
+                  <span className="text-[10px] uppercase tracking-widest text-gold-soft mt-2">
+                    {b.blurb}
+                  </span>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -384,6 +479,114 @@ export default function HomePage() {
                   </p>
                 </div>
               </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6b. Vidéo signature — film de marque */}
+      <section className="py-28 bg-ivory-dark/30">
+        <div className="container-prose">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-4">
+              <p className="label-eyebrow mb-4">
+                <span className="hairline inline-block align-middle mr-3 bg-terracotta" />
+                Le film
+              </p>
+              <h2 className="font-display text-3xl lg:text-4xl text-navy leading-tight">
+                Habba Saouda<br />
+                <span className="italic font-light">— en mouvement.</span>
+              </h2>
+              <p className="mt-5 text-ink/70 text-base leading-relaxed">
+                Le film publicitaire signé Laboratoires Venus pour la nouvelle
+                gamme capillaire. La graine de nigelle, l&apos;éclat des bruns,
+                le geste précis du Laboratoire.
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              <div className="relative aspect-video bg-ink overflow-hidden border border-ink/10">
+                <iframe
+                  src="https://www.youtube.com/embed/_O3HFFBG8Ns?rel=0&modestbranding=1"
+                  title="Habba Saouda — Hair Glow · Film publicitaire Venus"
+                  className="absolute inset-0 h-full w-full"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="mt-3 grid grid-cols-2 gap-3">
+                <div className="relative aspect-video bg-ink overflow-hidden border border-ink/10">
+                  <iframe
+                    src="https://www.youtube.com/embed/chm0eCfrMtY?rel=0&modestbranding=1"
+                    title="Venus — Film de marque"
+                    className="absolute inset-0 h-full w-full"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <Link
+                  href="https://www.youtube.com/channel/UCcIIPIHz8Zp197_XyEQStdg"
+                  className="aspect-video bg-navy text-ivory flex items-center justify-center px-6 hover:bg-navy/90 transition-colors text-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div>
+                    <p className="font-display text-xl">YouTube Venus</p>
+                    <p className="text-[11px] uppercase tracking-widest text-gold-soft mt-2">
+                      Toute la chaîne →
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6c. Certifications & reconnaissances */}
+      <section className="py-24 bg-ivory border-y border-ink/8">
+        <div className="container-prose">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+            <div>
+              <p className="label-eyebrow mb-4">
+                <span className="hairline inline-block align-middle mr-3 bg-gold" />
+                Reconnaissances
+              </p>
+              <h2 className="font-display text-3xl lg:text-4xl text-navy">
+                Élu Produit de l&apos;Année,<br />
+                <span className="italic font-light">trois fois certifié.</span>
+              </h2>
+            </div>
+            <p className="text-ink/65 text-sm max-w-md">
+              Membres AFAO et PDA Algérie. Trois gammes Venus ont été
+              sélectionnées par les consommateurs sous le label « Élu produit
+              de l&apos;année ».
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+            {[
+              { src: "/brand/certifications/PDA_ALGERIE_2023-834x1024.jpg", alt: "PDA Algérie 2023" },
+              { src: "/brand/certifications/logo-afao-03-887x1024.png", alt: "AFAO" },
+              { src: "/brand/certifications/qualite33.png", alt: "Qualité Algérie" },
+              { src: "/brand/certifications/quality.png", alt: "Élu produit de l'année — Qualité" },
+              { src: "/brand/certifications/cote.png", alt: "Côte" },
+              { src: "/brand/certifications/121888721582994865-512.png", alt: "Certification cosmétique" },
+            ].map((c) => (
+              <div
+                key={c.alt}
+                className="aspect-square bg-ivory-dark/30 border border-ink/8 flex items-center justify-center p-6"
+                title={c.alt}
+              >
+                <Image
+                  src={c.src}
+                  alt={c.alt}
+                  width={140}
+                  height={140}
+                  className="max-w-full max-h-full object-contain"
+                  unoptimized
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -505,6 +708,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 9b. Disponibles aussi sur — Jumia / Kadisse */}
+      <section className="py-20 bg-ivory border-t border-ink/8">
+        <div className="container-prose">
+          <p className="label-eyebrow mb-6 justify-center text-center">
+            <span className="hairline inline-block align-middle mr-3" />
+            Disponibles aussi sur
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <Link
+              href="https://www.jumia.dz/venus/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block bg-ivory-dark/40 hover:bg-ivory-dark/60 transition-all duration-500 border border-ink/10 hover:border-navy/30"
+            >
+              <div className="relative aspect-[4/1] flex items-center justify-center px-6">
+                <Image
+                  src="/brand/banners/BannerJumia4-22.png"
+                  alt="Boutique Venus officielle sur Jumia Algérie"
+                  width={520}
+                  height={130}
+                  className="max-w-full max-h-full object-contain"
+                  unoptimized
+                />
+              </div>
+            </Link>
+            <Link
+              href="https://kadisse.com/?s=laboratoire+venus&post_type=product&lang=fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block bg-ivory-dark/40 hover:bg-ivory-dark/60 transition-all duration-500 border border-ink/10 hover:border-navy/30"
+            >
+              <div className="relative aspect-[4/1] flex items-center justify-center px-6">
+                <Image
+                  src="/brand/banners/kadisse-banner.jpg"
+                  alt="Boutique Venus officielle sur Kadisse Algérie"
+                  width={520}
+                  height={130}
+                  className="max-w-full max-h-full object-contain"
+                  unoptimized
+                />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* 10. Newsletter + Exports */}
       <section className="py-32 bg-ivory-dark/40 border-t border-ink/8">
         <div className="container-prose grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -534,15 +783,21 @@ export default function HomePage() {
             </form>
           </div>
           <div className="lg:col-span-5">
-            <p className="label-eyebrow mb-4">
+            <div className="relative aspect-[4/3] overflow-hidden bg-ivory-dark/40 border border-ink/10">
+              <Image
+                src="/brand/banners/We-export_1120x700px_1-1024x640.png"
+                alt="Nous exportons — Venus dans le monde"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+            <p className="label-eyebrow mt-6 mb-3">
               <span className="hairline inline-block align-middle mr-3 bg-gold" />
               Exports
             </p>
-            <h3 className="font-display text-2xl lg:text-3xl text-navy">
-              Nous formulons depuis Alger,<br />
-              <span className="italic font-light">nous expédions partout.</span>
-            </h3>
-            <ul className="mt-6 space-y-1 text-ink/70 text-sm">
+            <ul className="space-y-1 text-ink/70 text-sm">
               <li>Maroc · Tunisie · Mauritanie</li>
               <li>France · Belgique · Allemagne</li>
               <li>Émirats Arabes Unis · Arabie Saoudite</li>
