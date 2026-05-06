@@ -5,6 +5,97 @@
 :root {
   --background: #f4efe6;
   --foreground: #0e0e10;
+
+  /* Default univers theme tokens (used in fallback). */
+  --univ-bg: #f4efe6;
+  --univ-surface: #eae2d2;
+  --univ-accent: #0f2a44;
+  --univ-accent-2: #c9a063;
+  --univ-text: #0e0e10;
+  --univ-deep: #0e0e10;
+  --univ-muted: #d8d2c4;
+}
+
+/* ---------- Per-univers theme variables ---------- */
+/* Visage — Apothicaire moderne */
+[data-univers="visage"] {
+  --univ-bg: #FBFAF7;
+  --univ-surface: #F4EFE6;
+  --univ-accent: #1F4570;
+  --univ-accent-2: #D9B68C;
+  --univ-text: #0E0E10;
+  --univ-deep: #0F2A44;
+  --univ-muted: #E1D9C8;
+}
+/* Cheveux — Brun ardent */
+[data-univers="cheveux"] {
+  --univ-bg: #F4EFE6;
+  --univ-surface: #EBE3D2;
+  --univ-accent: #A56438;
+  --univ-accent-2: #C9A063;
+  --univ-text: #1A0F1A;
+  --univ-deep: #3F1F2E;
+  --univ-muted: #D8C9B5;
+}
+/* Corps — Méditerranéen chaud */
+[data-univers="corps"] {
+  --univ-bg: #F4EFE6;
+  --univ-surface: #EBE0CB;
+  --univ-accent: #C57B57;
+  --univ-accent-2: #B59669;
+  --univ-text: #0F2A44;
+  --univ-deep: #0F2A44;
+  --univ-muted: #D7CDB8;
+}
+/* Solaire — Lumière du sud */
+[data-univers="solaire"] {
+  --univ-bg: #F4EFE6;
+  --univ-surface: #E1ECF0;
+  --univ-accent: #2A8A99;
+  --univ-accent-2: #E8D5A8;
+  --univ-text: #0F2A44;
+  --univ-deep: #1B5C68;
+  --univ-muted: #C9DDE2;
+}
+/* Bébé — Cocon doux */
+[data-univers="bebe"] {
+  --univ-bg: #FAF3E7;
+  --univ-surface: #E8EFF6;
+  --univ-accent: #1F4570;
+  --univ-accent-2: #F5DBDA;
+  --univ-text: #0F2A44;
+  --univ-deep: #0F2A44;
+  --univ-muted: #D9E2EC;
+}
+/* Homme — Force contemporaine */
+[data-univers="homme"] {
+  --univ-bg: #1B1B1F;
+  --univ-surface: #2A2A2E;
+  --univ-accent: #A56438;
+  --univ-accent-2: #5C6068;
+  --univ-text: #F4EFE6;
+  --univ-deep: #0E0E10;
+  --univ-muted: #3A3A3F;
+}
+/* Parfums — Luxe oriental */
+[data-univers="parfums"] {
+  --univ-bg: #0A0908;
+  --univ-surface: #1A1413;
+  --univ-accent: #C9A063;
+  --univ-accent-2: #E8D5A8;
+  --univ-text: #F4EFE6;
+  --univ-deep: #3F1F2E;
+  --univ-muted: #52403B;
+}
+/* Buccodentaire — Clinique fraîcheur */
+[data-univers="buccodentaire"] {
+  --univ-bg: #FAFCFD;
+  --univ-surface: #E8F3F5;
+  --univ-accent: #2A8A99;
+  --univ-accent-2: #C9A063;
+  --univ-text: #0F2A44;
+  --univ-deep: #1B5C68;
+  --univ-muted: #D8DDE2;
 }
 
 * {
@@ -59,6 +150,40 @@ html, body {
     @apply h-px w-12 bg-gold;
   }
 
+  /* Univers-aware utilities. They read the CSS variables set by
+     `[data-univers="<id>"]` ancestors. Use directly via Tailwind:
+       <div className="bg-univers text-univers"> */
+  .bg-univers { background-color: var(--univ-bg); }
+  .bg-univers-surface { background-color: var(--univ-surface); }
+  .bg-univers-accent { background-color: var(--univ-accent); }
+  .bg-univers-accent-2 { background-color: var(--univ-accent-2); }
+  .bg-univers-deep { background-color: var(--univ-deep); }
+  .text-univers { color: var(--univ-text); }
+  .text-univers-accent { color: var(--univ-accent); }
+  .text-univers-accent-2 { color: var(--univ-accent-2); }
+  .text-univers-muted { color: var(--univ-muted); }
+  .border-univers-accent { border-color: var(--univ-accent); }
+  .border-univers-muted { border-color: var(--univ-muted); }
+  .ring-univers-accent { --tw-ring-color: var(--univ-accent); }
+
+  .btn-univers {
+    background-color: var(--univ-accent);
+    color: var(--univ-bg);
+    @apply inline-flex items-center gap-2 px-6 py-3 text-[12px] uppercase tracking-widest font-medium transition;
+  }
+  .btn-univers:hover {
+    background-color: var(--univ-deep);
+  }
+  .btn-univers-ghost {
+    border: 1px solid var(--univ-accent);
+    color: var(--univ-accent);
+    @apply inline-flex items-center gap-2 px-6 py-3 text-[12px] uppercase tracking-widest font-medium transition bg-transparent;
+  }
+  .btn-univers-ghost:hover {
+    background-color: var(--univ-accent);
+    color: var(--univ-bg);
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -76,5 +201,27 @@ html, body {
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+  }
+
+  /* Vintage stamp — small "Maison Vénus 1981" badge */
+  .vintage-stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .vintage-stamp::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
   }
 }

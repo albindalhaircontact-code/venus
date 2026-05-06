@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 import { univers } from "@/lib/univers";
@@ -21,15 +22,15 @@ export function SiteHeader() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-700 ease-venus ${
         scrolled
-          ? "bg-ivory/95 backdrop-blur-md border-b border-ink/8"
-          : "bg-transparent"
+          ? "bg-ivory/96 backdrop-blur-md border-b border-ink/8 shadow-[0_1px_0_rgba(15,42,68,0.04)]"
+          : "bg-ivory/85 backdrop-blur-sm"
       }`}
     >
       <div className="hidden md:flex items-center justify-center text-[10px] tracking-widest uppercase text-navy/80 py-2 border-b border-ink/8">
         <span>Une pharmacopée méditerranéenne — Depuis 1981 · Algérie</span>
       </div>
 
-      <div className="container-prose flex items-center justify-between py-4 lg:py-5">
+      <div className="container-prose flex items-center justify-between py-3 lg:py-4 gap-6">
         <button
           aria-label="Menu"
           onClick={() => setOpen(true)}
@@ -38,12 +39,12 @@ export function SiteHeader() {
           <Menu size={22} />
         </button>
 
-        <nav className="hidden lg:flex items-center gap-8 flex-1">
-          {univers.slice(0, 5).map((u) => (
+        <nav className="hidden lg:flex items-center gap-7 flex-1">
+          {univers.slice(0, 4).map((u) => (
             <Link
               key={u.id}
               href={`/univers/${u.id}`}
-              className="text-[12px] uppercase tracking-widest text-navy hover:text-terracotta transition"
+              className="text-[11px] uppercase tracking-[0.18em] text-navy hover:text-terracotta transition"
             >
               {u.label}
             </Link>
@@ -52,26 +53,33 @@ export function SiteHeader() {
 
         <Link
           href="/"
-          className="font-display text-2xl lg:text-3xl text-navy text-center select-none"
-          aria-label="Laboratoires Vénus"
+          className="flex items-center justify-center select-none"
+          aria-label="Laboratoires Vénus — depuis 1981"
         >
-          <span className="block leading-none">Laboratoires</span>
-          <span className="block leading-none italic font-light tracking-wide">Vénus</span>
+          <Image
+            src="/brand/venus-master-logo.png"
+            alt="Laboratoires Vénus"
+            width={180}
+            height={92}
+            priority
+            className="h-12 lg:h-14 w-auto"
+            unoptimized
+          />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 flex-1 justify-end">
-          {univers.slice(5).map((u) => (
+        <nav className="hidden lg:flex items-center gap-7 flex-1 justify-end">
+          {univers.slice(4).map((u) => (
             <Link
               key={u.id}
               href={`/univers/${u.id}`}
-              className="text-[12px] uppercase tracking-widest text-navy hover:text-terracotta transition"
+              className="text-[11px] uppercase tracking-[0.18em] text-navy hover:text-terracotta transition"
             >
               {u.label}
             </Link>
           ))}
           <Link
             href="/journal"
-            className="text-[12px] uppercase tracking-widest text-navy hover:text-terracotta transition"
+            className="text-[11px] uppercase tracking-[0.18em] text-navy hover:text-terracotta transition"
           >
             Journal
           </Link>
@@ -89,7 +97,14 @@ export function SiteHeader() {
       {open && (
         <div className="fixed inset-0 z-50 bg-ivory">
           <div className="container-prose flex items-center justify-between py-5">
-            <span className="font-display text-2xl text-navy">Laboratoires Vénus</span>
+            <Image
+              src="/brand/venus-master-logo.png"
+              alt="Laboratoires Vénus"
+              width={150}
+              height={76}
+              className="h-12 w-auto"
+              unoptimized
+            />
             <button onClick={() => setOpen(false)} aria-label="Fermer" className="text-navy">
               <X size={22} />
             </button>

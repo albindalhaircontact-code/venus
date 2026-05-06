@@ -8,9 +8,17 @@ export function SiteFooter() {
       <div className="container-prose py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
-            <div className="font-display text-3xl leading-none mb-4">
-              <span className="block">Laboratoires</span>
-              <span className="italic font-light">Vénus</span>
+            {/* Footer wordmark — pair the serif Vénus mark with a vintage stamp */}
+            <div className="mb-5">
+              <span className="block text-[10px] tracking-[0.3em] uppercase text-gold">
+                Laboratoires
+              </span>
+              <span className="block font-display text-5xl leading-none italic text-ivory mt-1">
+                Vénus
+              </span>
+              <span className="block text-[10px] tracking-[0.3em] uppercase text-ivory/50 mt-2">
+                Depuis 1981 · Algérie
+              </span>
             </div>
             <p className="text-ivory/70 max-w-prose text-sm leading-relaxed">
               Une pharmacopée méditerranéenne née sous le soleil algérien.
@@ -18,7 +26,7 @@ export function SiteFooter() {
               corporels et de parfumerie pour la famille — pensés, testés,
               produits sur place.
             </p>
-            <div className="flex items-center gap-4 mt-6 text-[11px] uppercase tracking-widest text-ivory/50">
+            <div className="flex items-center gap-3 mt-6 text-[11px] uppercase tracking-widest text-ivory/50 flex-wrap">
               <span>Élu produit de l&apos;année</span>
               <span>·</span>
               <span>PDA Algérie</span>

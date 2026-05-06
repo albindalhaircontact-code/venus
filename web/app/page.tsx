@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { products, posts } from "@/lib/data";
 import { univers } from "@/lib/univers";
+import { universThemes } from "@/lib/univers-themes";
 import { maisons, maisonProducts } from "@/lib/maisons";
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
@@ -17,7 +18,7 @@ export default function HomePage() {
   return (
     <>
       {/* 1. Hero — Habba Saouda campaign */}
-      <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+      <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-[#1A0F1A]">
         <div className="absolute inset-0">
           <Image
             src="https://laboratoiresvenus.com/wp-content/uploads/2026/04/Banniere_2001x674_Habba-saouda_01.jpg"
@@ -25,18 +26,21 @@ export default function HomePage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-right md:object-center"
+            unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/15 to-ink/55" />
+          {/* Lateral gradient — keeps the left side dark for legibility on every screen */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1A0F1A]/95 via-[#1A0F1A]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0E0E10]/65" />
         </div>
 
         <div className="relative h-full container-prose flex flex-col justify-end pb-20 lg:pb-28">
-          <div className="max-w-3xl text-ivory animate-fade-up">
-            <p className="label-eyebrow !text-ivory/80 mb-6">
-              <span className="hairline inline-block align-middle mr-3 bg-gold" />
-              Nouvelle campagne · Hair Glow
+          <div className="max-w-2xl text-ivory animate-fade-up">
+            <p className="label-eyebrow !text-ivory/80 mb-6 flex items-center gap-3">
+              <span className="inline-block h-px w-12 bg-gold" />
+              <span className="text-gold-soft">Habba Saouda · Hair Glow</span>
             </p>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-ivory">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-ivory text-balance">
               L&apos;éclat des bruns,<br />
               <span className="italic font-light">par les graines de nigelle.</span>
             </h1>
@@ -46,12 +50,17 @@ export default function HomePage() {
               hyaluronique capillaire qui hydrate en profondeur sans alourdir.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/maison/habba-saouda" className="btn-primary !bg-ivory !text-navy hover:!bg-gold">
+              <Link href="/maison/habba-saouda" className="btn-primary !bg-gold !text-[#1A0F1A] hover:!bg-ivory">
                 Découvrir la gamme <ArrowRight size={14} />
               </Link>
               <Link href="/boutique" className="btn-link !text-ivory !border-ivory/40">
                 Toute la boutique
               </Link>
+            </div>
+            <div className="mt-10">
+              <span className="vintage-stamp text-ivory/70 border-ivory/30">
+                Maison Vénus · 1981
+              </span>
             </div>
           </div>
         </div>
@@ -102,32 +111,60 @@ export default function HomePage() {
             }
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-14">
-            {univers.map((u, i) => (
-              <Reveal key={u.id} delay={i * 60}>
-                <Link
-                  href={`/univers/${u.id}`}
-                  className="group block relative aspect-[4/5] bg-ivory overflow-hidden"
-                >
-                  <Image
-                    src={u.hero}
-                    alt={u.label}
-                    fill
-                    sizes="(min-width: 1024px) 25vw, 50vw"
-                    className="object-cover transition-transform duration-1000 ease-venus group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <p className="label-eyebrow !text-ivory/70 mb-1">{u.id === "homme" ? "Capsule" : "Univers"}</p>
-                    <h3 className="font-display text-2xl text-ivory leading-tight">
-                      {u.label}
-                    </h3>
-                    <p className="text-ivory/70 text-xs mt-1 leading-snug">
-                      {u.tagline}
-                    </p>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
+            {univers.map((u, i) => {
+              const theme = universThemes[u.id];
+              const isDarkTile = !!theme?.darkHero;
+              const surface = theme?.palette.surface ?? "#EAE2D2";
+              const accent = theme?.palette.accent ?? "#0F2A44";
+              return (
+                <Reveal key={u.id} delay={i * 60}>
+                  <Link
+                    href={`/univers/${u.id}`}
+                    className="group block relative aspect-[4/5] overflow-hidden"
+                    style={{ background: surface }}
+                  >
+                    <div className="absolute inset-0 transition-transform duration-1000 ease-venus group-hover:scale-105">
+                      <Image
+                        src={u.tile}
+                        alt={u.label}
+                        fill
+                        sizes="(min-width: 1024px) 25vw, 50vw"
+                        className="object-cover"
+                        unoptimized
+                      />
+                    </div>
+                    {/* Themed colour wash so each univers reads its own identity */}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: isDarkTile
+                          ? `linear-gradient(180deg, ${accent}55 0%, ${theme!.palette.deep ?? accent}E0 100%)`
+                          : `linear-gradient(180deg, ${surface}33 0%, ${accent}D0 100%)`,
+                      }}
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <p
+                        className="text-[10px] tracking-widest uppercase font-medium mb-1"
+                        style={{ color: theme?.palette.accent2 ?? "#C9A063" }}
+                      >
+                        {theme?.mood ?? "Univers"}
+                      </p>
+                      <h3
+                        className={`text-2xl leading-tight ${
+                          theme?.display === "sans" ? "font-sans font-bold" : "font-display"
+                        }`}
+                        style={{ color: "#F4EFE6" }}
+                      >
+                        {u.label}
+                      </h3>
+                      <p className="text-[11px] mt-1 leading-snug" style={{ color: "#F4EFE6", opacity: 0.7 }}>
+                        {u.tagline}
+                      </p>
+                    </div>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
