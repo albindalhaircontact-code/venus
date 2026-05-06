@@ -177,8 +177,7 @@ export const univers: Univers[] = [
       "nostalgie",
       "parfumer-le-corps",
     ],
-    nameKeywords: ["parfum", "eau de parfum", "eau de toilette", "eau de cologne", "fragrance", "nostalgie", "brume parfumée", "body spray"],
-    excludeKeywords: ["eden stars", "eden lovely", "eden flower", "eden garden"],
+    nameKeywords: ["parfum", "eau de parfum", "eau de toilette", "eau de cologne", "fragrance", "nostalgie", "brume parfumée", "body spray", "eden"],
     accent: "gold",
     inMainMosaic: true,
   },
@@ -202,14 +201,15 @@ export const univers: Univers[] = [
   {
     id: "private-collection",
     label: "Private Collection",
-    tagline: "L'archive olfactive Venus — Eden",
-    // Luxury / oriental atmosphere — gold + marble (placeholder until user-supplied photos).
-    hero: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=2400&q=80",
-    tile: "https://laboratoiresvenus.com/wp-content/uploads/2021/06/Parf4-01.png",
+    tagline: "Une nouvelle gamme cosmétique d'exception — bientôt disponible.",
+    // Luxury / oriental atmosphere — uses the official Private Collection
+    // brand photo and the user-supplied Anti-Âge product set as teaser.
+    hero: "/brand/private-collection/anti-age-clean.webp",
+    tile: "/brand/private-collection-logo-transparent.png",
     rootCategorySlugs: [
       "private-collection",
     ],
-    nameKeywords: ["eden stars", "eden lovely", "eden flower", "eden garden", "private collection"],
+    nameKeywords: ["private collection"],
     accent: "gold",
     inMainMosaic: false,
   },

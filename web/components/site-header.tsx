@@ -26,11 +26,28 @@ export function SiteHeader() {
           : "bg-ivory/85 backdrop-blur-sm"
       }`}
     >
-      <div className="hidden md:flex items-center justify-center text-[10px] tracking-widest uppercase text-navy/80 py-2 border-b border-ink/8">
-        <span>Une pharmacopée méditerranéenne — Depuis 1981 · Algérie</span>
+      {/* Utility bar — top */}
+      <div className="hidden md:flex items-center justify-between text-[10px] tracking-widest uppercase text-navy/80 py-2 border-b border-ink/8 px-6 lg:px-10">
+        <span className="flex-1 text-left">Une pharmacopée méditerranéenne — Depuis 1981 · Algérie</span>
+        <div className="flex-1 flex items-center justify-end gap-5">
+          <Link href="/journal" className="hover:text-terracotta transition">
+            Journal
+          </Link>
+          <Link
+            href="/univers/private-collection"
+            className="text-[#0A0908] hover:text-[#C9A063] transition tracking-[0.2em]"
+            style={{ fontWeight: 500 }}
+          >
+            Private Collection
+          </Link>
+          <button aria-label="Recherche" className="text-navy hover:text-terracotta transition">
+            <Search size={14} />
+          </button>
+        </div>
       </div>
 
-      <div className="container-prose flex items-center justify-between py-3 lg:py-4 gap-6">
+      {/* Main bar — 3-column grid keeps the logo perfectly centered */}
+      <div className="container-prose grid grid-cols-[auto_1fr_auto] lg:grid-cols-3 items-center py-3 lg:py-5 gap-6">
         <button
           aria-label="Menu"
           onClick={() => setOpen(true)}
@@ -39,7 +56,7 @@ export function SiteHeader() {
           <Menu size={22} />
         </button>
 
-        <nav className="hidden lg:flex items-center gap-7 flex-1">
+        <nav className="hidden lg:flex items-center gap-7 justify-start">
           {mainMosaicUnivers.slice(0, 4).map((u) => (
             <Link
               key={u.id}
@@ -59,15 +76,15 @@ export function SiteHeader() {
           <Image
             src="/brand/venus-master-logo.png"
             alt="Laboratoires Venus"
-            width={180}
-            height={92}
+            width={200}
+            height={110}
             priority
-            className="h-12 lg:h-14 w-auto"
+            className="h-12 lg:h-16 w-auto"
             unoptimized
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7 flex-1 justify-end">
+        <nav className="hidden lg:flex items-center gap-7 justify-end">
           {mainMosaicUnivers.slice(4).map((u) => (
             <Link
               key={u.id}
@@ -77,25 +94,9 @@ export function SiteHeader() {
               {u.label}
             </Link>
           ))}
-          <Link
-            href="/journal"
-            className="text-[11px] uppercase tracking-[0.18em] text-navy hover:text-terracotta transition"
-          >
-            Journal
-          </Link>
-          <Link
-            href="/univers/private-collection"
-            className="text-[10px] uppercase tracking-[0.22em] px-3 py-1.5 border border-[#C9A063] text-[#0F2A44] hover:bg-[#0A0908] hover:text-[#E8C770] hover:border-[#0A0908] transition-all duration-300"
-            style={{ fontWeight: 500 }}
-          >
-            Private Collection
-          </Link>
-          <button aria-label="Recherche" className="text-navy">
-            <Search size={18} />
-          </button>
         </nav>
 
-        <button aria-label="Recherche" className="lg:hidden text-navy">
+        <button aria-label="Recherche" className="lg:hidden text-navy justify-self-end">
           <Search size={20} />
         </button>
       </div>

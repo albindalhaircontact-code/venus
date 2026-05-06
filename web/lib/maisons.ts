@@ -68,15 +68,16 @@ export const maisons: Maison[] = [
     id: "private-collection",
     name: "Private Collection",
     shortName: "Private Collection",
-    tagline: "Eaux de parfum d'exception.",
+    tagline: "Une nouvelle gamme cosmétique d'exception — bientôt disponible.",
     description:
-      "Notre laboratoire signe ses créations les plus précieuses — extraits concentrés, matières premières rares, flacons dessinés à la main.",
-    // Luxe editorial — gold/marble atmosphere (placeholder until user-supplied photo).
-    hero: "/brand/private-collection/anti-age-clean.webp",
-    logo: "/brand/private-collection-gold.png",
-    signature: "Anti-âge · Acide hyaluronique · Eden",
+      "Notre laboratoire prépare la signature anti-âge Private Collection — Lotion Tonique, Lait Démaquillant, Sérum et Crème Hydratante à l'acide hyaluronique.",
+    // Luxe editorial — gold/marble atmosphere with the official Private
+    // Collection key visual (Anti-Âge gamme).
+    hero: "/brand/private-collection/anti-age-luxury.webp",
+    logo: "/brand/private-collection-logo-transparent.png",
+    signature: "Anti-âge · Acide hyaluronique · Bientôt",
     accent: "ink",
-    matchName: ["private", "eden stars", "eden lovely", "eden flower", "eden garden"],
+    matchName: ["private collection"],
   },
   {
     id: "venus-men",

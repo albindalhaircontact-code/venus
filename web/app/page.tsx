@@ -9,6 +9,7 @@ import { brands } from "@/lib/brands";
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { HeroSlideshow } from "@/components/hero-slideshow";
 
 export default function HomePage() {
   const habba = maisonProducts(maisons[0]).slice(0, 3);
@@ -18,83 +19,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* 1. Hero — Habba Saouda campaign, with editorial framing */}
-      <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-[#1A0F1A]">
-        <div className="absolute inset-0">
-          <Image
-            src="https://laboratoiresvenus.com/wp-content/uploads/2021/07/rear-view-of-combing-healthy-long-straight-female-hair-isolated-on-gray.jpg"
-            alt="Gamme Habba Saouda — Hair Glow · L'éclat des bruns"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-            unoptimized
-          />
-          {/* Deep aubergine wash — the Habba Saouda brand colour bath */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(125deg, #1A0F1A 0%, #1A0F1Aee 25%, #1A0F1Acc 50%, #3F1F2E80 75%, #3F1F2E40 100%)",
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0E0E10]/70" />
-          {/* Subtle botanical decoration top-right (heritage) */}
-          <div className="hidden lg:block absolute top-0 right-0 w-[42%] h-full pointer-events-none opacity-[0.12] mix-blend-screen">
-            <Image
-              src="/brand/venus-w40ans-03.png"
-              alt=""
-              fill
-              sizes="40vw"
-              className="object-contain object-right-bottom"
-              unoptimized
-            />
-          </div>
-        </div>
-
-        <div className="relative h-full container-prose flex flex-col justify-center max-w-7xl">
-          <div className="max-w-2xl lg:max-w-3xl text-ivory animate-fade-up">
-            <p className="label-eyebrow !text-ivory/80 mb-7 flex items-center gap-3">
-              <span className="inline-block h-px w-12 bg-gold" />
-              <span className="text-gold-soft">Nouveau · Habba Saouda — Hair Glow</span>
-            </p>
-            <h1
-              className="font-display text-ivory text-balance leading-[0.95]"
-              style={{ fontSize: "clamp(3rem, 7.5vw, 6.5rem)" }}
-            >
-              Vos bruns ternes
-              <br />
-              <span className="italic font-light">retrouvent leur âme</span>
-              <br />
-              <span className="italic font-light">et leur lumière.</span>
-            </h1>
-            <p className="mt-7 max-w-[36rem] text-ivory/85 text-base md:text-lg leading-relaxed font-sans">
-              La gamme Habba Saouda — Hair Glow unit l&apos;extrait pur de graines de nigelle,
-              régénérateur ancestral, à un acide hyaluronique capillaire qui hydrate en
-              profondeur sans jamais alourdir.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4 items-center">
-              <Link
-                href="/maison/habba-saouda"
-                className="btn-primary !bg-gold !text-[#1A0F1A] hover:!bg-ivory"
-              >
-                Découvrir la gamme <ArrowRight size={14} />
-              </Link>
-              <Link href="/boutique" className="btn-link !text-ivory !border-ivory/40">
-                Toute la boutique
-              </Link>
-            </div>
-          </div>
-          <div className="mt-12 flex items-center gap-5 opacity-90">
-            <span className="vintage-stamp text-ivory/70 border-ivory/30">
-              Laboratoires Venus · Algérie · 1981
-            </span>
-            <span className="text-[10px] tracking-widest uppercase text-gold-soft">
-              79 récompenses · 44 ans
-            </span>
-          </div>
-        </div>
-      </section>
+      {/* 1. Hero slideshow — 6 visuels officiels avec fondu enchaîné */}
+      <HeroSlideshow />
 
       {/* 2. Manifesto — 44 ans */}
       <section className="py-32 lg:py-40">
@@ -310,13 +236,14 @@ export default function HomePage() {
         </div>
         <div className="relative container-prose grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-6 order-2 lg:order-1">
+            {/* Logo officiel Private Collection sur fond transparent */}
             <Image
-              src="/brand/private-collection-gold.png"
-              alt="Logo Venus Private Collection"
-              width={220}
-              height={150}
-              className="mb-8 brightness-0 invert opacity-90"
-              style={{ filter: "sepia(1) hue-rotate(5deg) saturate(2.2)" }}
+              src="/brand/private-collection-logo-transparent.png"
+              alt="Laboratoires Venus — Private Collection"
+              width={240}
+              height={192}
+              className="mb-8 h-24 lg:h-28 w-auto"
+              style={{ filter: "drop-shadow(0 2px 18px rgba(0,0,0,0.45))" }}
               unoptimized
             />
             <p
@@ -324,7 +251,7 @@ export default function HomePage() {
               style={{ color: "#D4A24E" }}
             >
               <span className="inline-block h-px w-10" style={{ background: "#D4A24E" }} />
-              Une collection à part
+              Une collection à part — Bientôt disponible
             </p>
             <h2
               className="font-display text-balance"
@@ -364,17 +291,7 @@ export default function HomePage() {
                   borderColor: "#D4A24E",
                 }}
               >
-                Entrer dans la collection <ArrowRight size={14} />
-              </Link>
-              <Link
-                href="/maison/private-collection"
-                className="btn-link"
-                style={{
-                  color: "#E8C770",
-                  borderColor: "rgba(232,199,112,0.4)",
-                }}
-              >
-                La maison
+                Découvrir la collection <ArrowRight size={14} />
               </Link>
             </div>
           </div>
@@ -506,7 +423,7 @@ export default function HomePage() {
             <div className="lg:col-span-8">
               <div className="relative aspect-video bg-ink overflow-hidden border border-ink/10">
                 <iframe
-                  src="https://www.youtube.com/embed/_O3HFFBG8Ns?rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/_O3HFFBG8Ns?autoplay=1&mute=1&loop=1&playlist=_O3HFFBG8Ns&controls=1&rel=0&modestbranding=1&playsinline=1"
                   title="Habba Saouda — Hair Glow · Film publicitaire Venus"
                   className="absolute inset-0 h-full w-full"
                   loading="lazy"
@@ -517,7 +434,7 @@ export default function HomePage() {
               <div className="mt-3 grid grid-cols-2 gap-3">
                 <div className="relative aspect-video bg-ink overflow-hidden border border-ink/10">
                   <iframe
-                    src="https://www.youtube.com/embed/chm0eCfrMtY?rel=0&modestbranding=1"
+                    src="https://www.youtube.com/embed/chm0eCfrMtY?autoplay=1&mute=1&loop=1&playlist=chm0eCfrMtY&controls=1&rel=0&modestbranding=1&playsinline=1"
                     title="Venus — Film de marque"
                     className="absolute inset-0 h-full w-full"
                     loading="lazy"
@@ -544,50 +461,90 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6c. Certifications & reconnaissances */}
+      {/* 6c. Certifications & reconnaissances — exactement 3 */}
       <section className="py-24 bg-ivory border-y border-ink/8">
         <div className="container-prose">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
               <p className="label-eyebrow mb-4">
                 <span className="hairline inline-block align-middle mr-3 bg-gold" />
                 Reconnaissances
               </p>
               <h2 className="font-display text-3xl lg:text-4xl text-navy">
-                Élu Produit de l&apos;Année,<br />
-                <span className="italic font-light">trois fois certifié.</span>
+                Trois certifications,<br />
+                <span className="italic font-light">une exigence.</span>
               </h2>
             </div>
             <p className="text-ink/65 text-sm max-w-md">
-              Membres AFAO et PDA Algérie. Trois gammes Venus ont été
-              sélectionnées par les consommateurs sous le label « Élu produit
-              de l&apos;année ».
+              Laboratoires Venus est membre de l&apos;AFAO et de la PDA Algérie,
+              et signataire de la charte Ikhtiyari.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-stretch">
             {[
-              { src: "/brand/certifications/PDA_ALGERIE_2023-834x1024.jpg", alt: "PDA Algérie 2023" },
-              { src: "/brand/certifications/logo-afao-03-887x1024.png", alt: "AFAO" },
-              { src: "/brand/certifications/qualite33.png", alt: "Qualité Algérie" },
-              { src: "/brand/certifications/quality.png", alt: "Élu produit de l'année — Qualité" },
-              { src: "/brand/certifications/cote.png", alt: "Côte" },
-              { src: "/brand/certifications/121888721582994865-512.png", alt: "Certification cosmétique" },
+              { src: "/brand/certifications/PDA_ALGERIE_2023-834x1024.jpg", alt: "PDA Algérie 2023", caption: "PDA Algérie · 2023" },
+              { src: "/brand/certifications/logo-afao-03-887x1024.png", alt: "AFAO", caption: "AFAO" },
+              { src: "/brand/certifications/Logo-Ikhtiyari-1000.png", alt: "Ikhtiyari", caption: "Ikhtiyari" },
             ].map((c) => (
               <div
                 key={c.alt}
-                className="aspect-square bg-ivory-dark/30 border border-ink/8 flex items-center justify-center p-6"
+                className="bg-ivory-dark/30 border border-ink/8 p-10 flex flex-col items-center justify-center gap-5 aspect-[4/3]"
                 title={c.alt}
               >
-                <Image
-                  src={c.src}
-                  alt={c.alt}
-                  width={140}
-                  height={140}
-                  className="max-w-full max-h-full object-contain"
-                  unoptimized
-                />
+                <div className="flex-1 flex items-center justify-center w-full">
+                  <Image
+                    src={c.src}
+                    alt={c.alt}
+                    width={240}
+                    height={240}
+                    className="max-w-[180px] max-h-[160px] object-contain"
+                    unoptimized
+                  />
+                </div>
+                <p className="text-[10px] tracking-[0.22em] uppercase text-navy/70">
+                  {c.caption}
+                </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6d. Call-center — bannière officielle */}
+      <section className="py-20 bg-navy text-ivory">
+        <div className="container-prose grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="label-eyebrow !text-gold-soft mb-4">
+              <span className="hairline inline-block align-middle mr-3 bg-gold" />
+              Service Consommateur
+            </p>
+            <h2 className="font-display text-3xl lg:text-5xl leading-[1.05]">
+              Une question ?<br />
+              <span className="italic font-light">Notre équipe vous répond.</span>
+            </h2>
+            <p className="mt-6 text-ivory/75 text-base leading-relaxed max-w-md">
+              Du dimanche au jeudi, 8h&nbsp;–&nbsp;17h. Nos conseillers vous
+              accompagnent pour les recommandations de soin et le suivi des
+              commandes.
+            </p>
+            <div className="mt-7 flex flex-col gap-2 text-sm text-ivory/85">
+              <a href="tel:0770400040" className="hover:text-gold transition">
+                <span className="font-display text-2xl lg:text-3xl tracking-wider">0770 40 00 40</span>
+              </a>
+              <a href="mailto:contact@labovenus.dz" className="text-ivory/70 hover:text-gold transition">
+                contact@labovenus.dz
+              </a>
+            </div>
+          </div>
+          <div className="relative">
+            <Image
+              src="/brand/banners/Call-center-01-1024x232.png"
+              alt="Service Consommateur Laboratoires Venus — 0770 40 00 40"
+              width={1024}
+              height={232}
+              className="w-full h-auto"
+              unoptimized
+            />
           </div>
         </div>
       </section>

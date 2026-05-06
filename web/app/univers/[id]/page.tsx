@@ -9,7 +9,10 @@ import type { Product } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
 
 export function generateStaticParams() {
-  return univers.map((u) => ({ id: u.id }));
+  // Private Collection has its own dedicated route at
+  // /univers/private-collection (see ../private-collection/page.tsx)
+  // so we exclude it from the dynamic catch-all.
+  return univers.filter((u) => u.id !== "private-collection").map((u) => ({ id: u.id }));
 }
 
 export function generateMetadata({ params }: { params: { id: string } }) {

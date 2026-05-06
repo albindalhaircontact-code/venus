@@ -128,9 +128,9 @@ export const brands: Brand[] = [
   {
     id: "private-collection",
     name: "Private Collection",
-    logo: "/brand/private-collection-gold.png",
+    logo: "/brand/private-collection-logo-transparent.png",
     href: "/univers/private-collection.html",
-    blurb: "Haute parfumerie & soins d'exception.",
+    blurb: "Cosmétiques d'exception — Anti-âge.",
     group: "exception",
   },
 ];
